@@ -1,1 +1,1 @@
-# CinePlanet_Proyecjt_PWEB2
+# CinePlanet_Proyect_PWEB2
