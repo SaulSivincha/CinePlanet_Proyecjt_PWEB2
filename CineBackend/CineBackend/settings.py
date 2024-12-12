@@ -71,8 +71,12 @@ WSGI_APPLICATION = 'CineBackend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'CineDB',
+        'USER': 'root',
+        'PASSWORD': 'AaronQD123456',
+        'HOST': 'localhost',
+        'PORT': '3307',
     }
 }
 
