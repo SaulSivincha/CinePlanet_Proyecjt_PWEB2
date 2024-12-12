@@ -1,18 +1,18 @@
-import './NavBar.css'
+import './NavBar.css';
 
-function NavBar(){
-  return(
-    <>
+function NavBar() {
+  return (
+    <nav>
       <ul>
-        <li>cinePlanet</li>
-        <li>Peliculas</li>
-        <li>Cines</li>
-        <li>Promociones</li>
-        <li>Dulceria</li>
-        <li>Carrito de Compras</li>
+        <li><a href="/">cinePlanet</a></li>
+        <li><a href="/peliculas">Peliculas</a></li>
+        <li><a href="/cines">Cines</a></li>
+        <li><a href="/promociones">Promociones</a></li>
+        <li><a href="/dulceria">Dulceria</a></li>
+        <li><a href="/carrito">Carrito de Compras</a></li>
       </ul>
-    </>
-  )
+    </nav>
+  );
 }
 
-export default NavBar
+export default NavBar;
