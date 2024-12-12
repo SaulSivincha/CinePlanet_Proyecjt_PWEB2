@@ -1,0 +1,22 @@
+/* CinePage.css */
+.title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2rem;
+    color: #000000;
+    
+  
+  }
+  
+  .cine-grid {
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    width: 100%;
+    align-items: center;
+    background-color: #ffffff;
+  }
+ 
+  
