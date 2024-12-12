@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'users',
     'movies',
     'concessions',
+    'promotions',
     'theaters',
     'cart',
     'corsheaders',

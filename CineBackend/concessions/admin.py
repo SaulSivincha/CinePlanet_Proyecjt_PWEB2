@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Concession
 
-# Register your models here.
+@admin.register(Concession)
+class ConcessionAdmin(admin.ModelAdmin):
+    list_display = ('title', 'price', 'quantity')
