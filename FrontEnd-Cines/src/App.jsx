@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import CinePage from './components/CinePage';
+import LoginPage from './components/LoginPage';
+import DulceriaPage from './components/DulceriaPage';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Router>
+      <header className="header">
+        <nav>
+          <ul className="nav-links">
+            <li>
+              <Link to="/cines">Cines</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/dulceria">Dulcería</Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <Routes>
+          <Route path="/cines" element={<CinePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/dulceria" element={<DulceriaPage />} />
+        </Routes>
+      </main>
+      <footer className="footer">
+        <p>© 2024 Nuestras Sedes. Todos los derechos reservados.</p>
+      </footer> 
+    </Router>
+  );
 }
 
-export default App
+export default App;
