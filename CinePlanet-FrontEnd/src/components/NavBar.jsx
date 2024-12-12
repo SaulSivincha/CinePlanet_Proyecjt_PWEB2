@@ -1,17 +1,21 @@
-import './NavBar.css';
- 
+import { useNavigate } from 'react-router-dom';
+import '../styles/NavBar.css';
 function NavBar() {
-   return (
-     <nav>
-       <ul>
-         <li><a href="/">cinePlanet</a></li>
-         <li><a href="/peliculas">Peliculas</a></li>
-				 <li><a href="/cines">Cines</a></li>
-         <li><a href="/promociones">Promociones</a></li>
-         <li><a href="/dulceria">Dulceria</a></li>
-         <li><a href="/carrito">Carrito de Compras</a></li>
-       </ul>
-     </nav>
-	);
+    const navigate = useNavigate();
+
+    return (
+        <div>  
+            <ul>
+                <li><button onClick={() => navigate('/')}>Inicio</button></li>
+                <li><button onClick={() => navigate('/cines')}>Cines</button></li>
+                <li><button onClick={() => navigate('/peliculas')}>Películas</button></li>
+                <li><button onClick={() => navigate('/promociones')}>Promociones</button></li>
+                <li><button onClick={() => navigate('/dulceria')}>Dulcería</button></li>
+                <li><button onClick={() => navigate('/carrito')}>Carrito</button></li>
+            </ul>
+        </div>
+    );
 }
+
 export default NavBar;
+
