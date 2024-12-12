@@ -4,7 +4,7 @@ function NavBar() {
     const navigate = useNavigate();
 
     return (
-        <div>  
+        <nav>  
             <ul>
                 <li><button onClick={() => navigate('/')}>Inicio</button></li>
                 <li><button onClick={() => navigate('/cines')}>Cines</button></li>
@@ -13,7 +13,7 @@ function NavBar() {
                 <li><button onClick={() => navigate('/dulceria')}>Dulcería</button></li>
                 <li><button onClick={() => navigate('/carrito')}>Carrito</button></li>
             </ul>
-        </div>
+        </nav>
     );
 }
 
