@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.lista {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten */
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap; /* Para reorganizar contenido en pantallas pequeñas */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 700px; /* Limita el ancho máximo */
+  position: relative;
+  margin: 10px; /* Espaciado entre tarjetas */
+}
+
+.imagen {
+  width: 100%; /* Toma todo el ancho en pantallas pequeñas */
+  max-width: 150px; /* Tamaño máximo */
+  height: auto; /* Mantiene la proporción */
+  object-fit: cover;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  font-size: 14px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.detalle {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #333;
+  position: relative;
+}
+
+.titulo {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #000;
+  text-align: left;
+}
+
+.descripcion {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 40px; /* Aumentar espacio para evitar superposición */
+  line-height: 1.5;
+}
+
+.precio {
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: auto;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.boton {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid #f04e30;
+  border-radius: 50%;
+  color: #f04e30;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #f04e30;
+  color: #fff;
+}
+
+.cantidad {
+  margin: 0 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Consultas de medios para pantallas pequeñas */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column; /* Apila elementos verticalmente */
+    max-width: 100%; /* Usa todo el ancho disponible */
+  }
+
+  .imagen {
+    max-width: 100%; /* Imagen se adapta al ancho */
+    height: auto; /* Mantener proporciones */
+  }
+
+  .precio {
+    position: static; /* Reubica el precio para pantallas pequeñas */
+    margin-top: 10px;
+    text-align: right;
+  }
+
+  .controles {
+    position: static; /* Reubica botones */
+    margin-top: 10px;
+    justify-content: center; /* Centra los botones */
+  }
+}
