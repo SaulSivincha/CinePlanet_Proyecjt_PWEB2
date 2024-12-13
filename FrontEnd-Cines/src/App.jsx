@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import CinePage from './components/CinePage';
-import LoginPage from './components/LoginPage';
-import DulceriaPage from './components/DulceriaPage';
+import CinePage from './components/CinePage.jsx';
+import LoginPage from './components/LoginPage.jsx';
+import DulceriaPage from './components/DulceriaPage.jsx';
 import './App.css';
 
 function App() {
@@ -30,9 +30,6 @@ function App() {
           <Route path="/dulceria" element={<DulceriaPage />} />
         </Routes>
       </main>
-      <footer className="footer">
-        <p>© 2024 Nuestras Sedes. Todos los derechos reservados.</p>
-      </footer> 
     </Router>
   );
 }
