@@ -7,7 +7,7 @@ function ProductoC({ imagen_url, nombre, descripcion, precio, actualizarTotal })
   const agregarProducto = () => {
     setCantidad((prevCantidad) => {
       const nuevaCantidad = prevCantidad + 1;
-      actualizarTotal(precio); // Suma al total el precio del producto
+      actualizarTotal(precio); 
       return nuevaCantidad;
     });
   };
@@ -16,7 +16,7 @@ function ProductoC({ imagen_url, nombre, descripcion, precio, actualizarTotal })
     setCantidad((prevCantidad) => {
       if (prevCantidad > 0) {
         const nuevaCantidad = prevCantidad - 1;
-        actualizarTotal(-precio); // Resta del total el precio del producto
+        actualizarTotal(-precio); 
         return nuevaCantidad;
       }
       return prevCantidad;

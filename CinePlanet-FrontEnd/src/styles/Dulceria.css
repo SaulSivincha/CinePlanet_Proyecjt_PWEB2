@@ -10,26 +10,26 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    flex-wrap: wrap; /* Permite que las tarjetas se ajusten */
+    flex-wrap: wrap;
   }
   
   .card {
     display: flex;
-    flex-wrap: wrap; /* Para reorganizar contenido en pantallas pequeñas */
+    flex-wrap: wrap; 
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 100%;
-    max-width: 700px; /* Limita el ancho máximo */
+    max-width: 700px;
     position: relative;
-    margin: 10px; /* Espaciado entre tarjetas */
+    margin: 10px; 
   }
   
   .imagen {
-    width: 100%; /* Toma todo el ancho en pantallas pequeñas */
-    max-width: 150px; /* Tamaño máximo */
-    height: auto; /* Mantiene la proporción */
+    width: 100%; 
+    max-width: 150px;
+    height: auto; 
     object-fit: cover;
     background-color: #ddd;
     display: flex;
@@ -62,7 +62,7 @@ body {
   .descripcion {
     color: #010031;
     font-size: 14px;
-    margin-bottom: 40px; /* Aumentar espacio para evitar superposición */
+    margin-bottom: 40px;
     line-height: 1.5;
   }
   
@@ -113,36 +113,35 @@ body {
     color: #0013e9;
   }
   
-  /* Consultas de medios para pantallas pequeñas */
   @media (max-width: 768px) {
     .card {
-      flex-direction: column; /* Apila elementos verticalmente */
-      max-width: 100%; /* Usa todo el ancho disponible */
+      flex-direction: column; 
+      max-width: 100%; 
     }
   
     .imagen {
-      max-width: 100%; /* Imagen se adapta al ancho */
-      height: auto; /* Mantener proporciones */
+      max-width: 100%; 
+      height: auto; 
     }
   
     .precio {
-      position: static; /* Reubica el precio para pantallas pequeñas */
+      position: static;
       margin-top: 10px;
       text-align: right;
     }
   
     .controles {
-      position: static; /* Reubica botones */
+      position: static;
       margin-top: 10px;
-      justify-content: center; /* Centra los botones */
+      justify-content: center; 
     }
   }
   .app-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 elementos por fila */
-    gap: 20px; /* Espaciado entre las tarjetas */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: start; /* Alinear verticalmente */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    justify-content: center; 
+    align-items: start; 
   }
   .total {
     margin-top: 20px;
@@ -160,27 +159,25 @@ body {
     font-weight: bold;
     color: red;
   }
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
-  
-  .Principal {
-    font-family: 'Playfair Display'; /* Fuente elegante */
-    font-size: 2rem; /* Tamaño destacado */
-    font-weight: 700; /* Negrita */
-    color: #0e0053cb; /* Negro puro */
-    text-transform: uppercase; /* Mayúsculas */
-    text-align: center; /* Centrado */
-    letter-spacing: 2px; /* Espaciado entre letras */
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombras sutiles */
-  
-    display: inline-block; /* Para que la línea no ocupe todo el ancho */
-    padding-bottom: 5px; /* Espaciado con la línea */
 
-    /* Ajuste para moverlo ligeramente más abajo */
-    position: relative; /* Posicionamiento relativo para usar top */
-    top: 50px; /* Ajusta el valor según lo necesario */
+  .Principal {
+    font-family: 'Playfair Display';
+    font-size: 2rem; 
+    font-weight: 700; 
+    color: #0e0053cb; 
+    text-transform: uppercase;
+    text-align: center; 
+    letter-spacing: 2px; 
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1); 
+  
+    display: inline-block;
+    padding-bottom: 5px; 
+
+    position: relative; 
+    top: 50px; 
 }
 .boton-pagar {
-    background: linear-gradient(90deg, #0d00ff, #00fae1); /* Degradado rojo */
+    background: linear-gradient(90deg, #0d00ff, #00fae1); 
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
@@ -191,9 +188,9 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    position: absolute; /* Para posicionarlo en la parte derecha */
-    right: 20px; /* 20px de distancia desde la derecha */
-    bottom: -500px; /* Ajusta la distancia desde el borde inferior */
+    position: absolute; 
+    right: 20px; 
+    bottom: -500px; 
 }
 
 .boton-pagar:hover {

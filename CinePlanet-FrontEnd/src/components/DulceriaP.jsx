@@ -1,6 +1,5 @@
-import React, { useState } from 'react'; // Elimina StrictMode aquí si ya lo declaraste antes
-import { StrictMode } from 'react'; // Si ya está incluido en React, no lo declares nuevamente
-import { createRoot } from 'react-dom/client';
+import React, { useState } from 'react'; 
+import { StrictMode } from 'react'; 
 import '../styles/Dulceria.css';
 import ProductoC from './ProductoC.jsx';
 
@@ -8,7 +7,7 @@ function DulceriaP() {
   const [total, setTotal] = useState(0);
 
   const actualizarTotal = (monto) => {
-    setTotal((prevTotal) => Math.max(0, prevTotal + monto)); // Asegura que nunca sea negativo
+    setTotal((prevTotal) => Math.max(0, prevTotal + monto)); 
   };
 
   return (
@@ -93,7 +92,6 @@ function DulceriaP() {
             precio={30.0}
             actualizarTotal={actualizarTotal}
           />
-          {/* Agrega los demás productos de la misma forma */}
         </div>
         <div className="total">
           <h3>TOTAL</h3>
