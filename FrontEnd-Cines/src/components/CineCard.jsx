@@ -1,5 +1,5 @@
 import React from 'react';
-import './CinePage.css';
+import './CineCard.css';
 
 function CineCard({ nombre, direccion, imagen }) {
   return (
