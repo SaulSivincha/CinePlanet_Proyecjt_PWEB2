@@ -1,15 +1,26 @@
 import { useState } from 'react'
 import './App.css'
 
-function App({ imagen_url, nombre, descripcion, precio }) {
+function App({ imagen_url, nombre, descripcion, precio, actualizarTotal }) {
   const [cantidad, setCantidad] = useState(0);
 
   const agregarProducto = () => {
-    setCantidad((prevCantidad) => prevCantidad + 1);
+    setCantidad((prevCantidad) => {
+      const nuevaCantidad = prevCantidad + 1;
+      actualizarTotal(precio); // Suma al total el precio del producto
+      return nuevaCantidad;
+    });
   };
 
   const quitarProducto = () => {
-    setCantidad((prevCantidad) => (prevCantidad > 0 ? prevCantidad - 1 : 0));
+    setCantidad((prevCantidad) => {
+      if (prevCantidad > 0) {
+        const nuevaCantidad = prevCantidad - 1;
+        actualizarTotal(-precio); // Resta del total el precio del producto
+        return nuevaCantidad;
+      }
+      return prevCantidad;
+    });
   };
 
   return (
@@ -39,4 +50,4 @@ function App({ imagen_url, nombre, descripcion, precio }) {
   );
 }
 
-export default App
+export default App;

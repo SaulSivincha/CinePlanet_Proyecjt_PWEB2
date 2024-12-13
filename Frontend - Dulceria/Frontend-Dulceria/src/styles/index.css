@@ -73,3 +73,59 @@ button:focus-visible {
   justify-content: center; /* Centrar horizontalmente */
   align-items: start; /* Alinear verticalmente */
 }
+.total {
+  margin-top: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.total h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.total h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: red;
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+.Principal {
+  font-family: 'Playfair Display'; /* Fuente elegante */
+  font-size: 3rem; /* Tamaño destacado */
+  font-weight: 700; /* Negrita */
+  color: #373737; /* Negro puro */
+  text-transform: uppercase; /* Mayúsculas */
+  text-align: center; /* Centrado */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombras sutiles */
+
+  display: inline-block; /* Para que la línea no ocupe todo el ancho */
+  padding-bottom: 5px; /* Espaciado con la línea */
+}
+.boton-pagar {
+  background: linear-gradient(90deg, #e63946, #f1faee); /* Degradado rojo */
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: absolute; /* Para posicionarlo en la parte derecha */
+  right: 20px; /* 20px de distancia desde la derecha */
+}
+
+.boton-pagar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.boton-pagar:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
