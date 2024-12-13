@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Tarjeta de película */
+  .movie-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* Imágenes de las tarjetas */
+  .card-img-top {
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+    height: auto; /* Ajusta la altura proporcionalmente */
+    object-fit: cover; /* Asegura que la imagen mantenga sus proporciones */
+  }
+  
+  /* Estilo del título */
+  .card-title {
+    font-size: 1rem; /* Tamaño de texto base */
+    font-weight: bold;
+  }
+  
+  /* Texto responsivo */
+  .card-text {
+    font-size: 0.875rem; /* Tamaño base pequeño */
+    color: #6c757d;
+  }
+  
+  /* Texto en pantallas medianas */
+  @media (min-width: 768px) {
+    .card-title {
+      font-size: 1.25rem;
+    }
+  
+    .card-text {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Texto en pantallas grandes */
+  @media (min-width: 1200px) {
+    .card-title {
+      font-size: 1.5rem;
+    }
+  
+    .card-text {
+      font-size: 1.125rem;
+    }
+  }
+  
