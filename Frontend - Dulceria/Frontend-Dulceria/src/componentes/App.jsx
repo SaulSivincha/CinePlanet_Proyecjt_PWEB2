@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-function App() {
+function App({ imagen_url, nombre, descripcion, precio }) {
   const [cantidad, setCantidad] = useState(0);
 
   const agregarProducto = () => {
@@ -13,35 +13,30 @@ function App() {
   };
 
   return (
-    <>
-      <div className="lista">
-      <div className="card">
-        <img
-          src="https://via.placeholder.com/150"
-          alt="Producto"
-          className="imagen"
-        />
-        <div className="detalle">
-          <p className="titulo">COMBO DUO7 GLADIADOR 2</p>
-          <p className="descripcion">
-            2 Gaseosas grandes + 2 canchitas grandes saladas + 1 barril gladiador sin canchita + 1 frankfurter + 1 nachos con queso
-          </p>
-          <p className="precio">S/ 89.90</p>
-          <div className="controles">
-            <button className="boton" onClick={quitarProducto}>
-              -
-            </button>
-            <p className="cantidad">{cantidad}</p>
-            <button className="boton" onClick={agregarProducto}>
-              +
-            </button>
-          </div>
+    <div className="card">
+      <img src={imagen_url} alt={nombre} className="imagen" />
+      <div className="detalle">
+        <p className="titulo">
+          <strong>{nombre}</strong>
+        </p>
+        <p className="descripcion">
+          <span>{descripcion}</span>
+        </p>
+        <p className="precio">
+          <strong>S/ {precio.toFixed(2)}</strong>
+        </p>
+        <div className="controles">
+          <button className="boton" onClick={quitarProducto}>
+            -
+          </button>
+          <p className="cantidad">{cantidad}</p>
+          <button className="boton" onClick={agregarProducto}>
+            +
+          </button>
         </div>
       </div>
     </div>
-
-    </>
-  )
+  );
 }
 
 export default App
