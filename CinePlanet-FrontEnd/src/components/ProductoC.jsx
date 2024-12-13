@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import '../styles.Dulceria.css';
+import '../styles/Dulceria.css';
 
 function ProductoC({ imagen_url, nombre, descripcion, precio, actualizarTotal }) {
   const [cantidad, setCantidad] = useState(0);

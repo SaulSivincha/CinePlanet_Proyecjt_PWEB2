@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; // Elimina StrictMode aquí si ya lo declaraste antes
 import { StrictMode } from 'react'; // Si ya está incluido en React, no lo declares nuevamente
 import { createRoot } from 'react-dom/client';
-import '../styles.Dulceria.css';
+import '../styles/Dulceria.css';
 import ProductoC from './ProductoC.jsx';
 
 function DulceriaP() {
