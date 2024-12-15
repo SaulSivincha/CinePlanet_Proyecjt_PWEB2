@@ -1,10 +1,15 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('cines/', include('cines.urls')),
+    path('dulceria/', include('dulceria.urls')),
+    path('peliculas/', include('peliculas.urls')),
+    path('promociones/', include('promociones.urls')),
+    path('usuarios/', include('usuarios.urls')),
 ]
 
 if settings.DEBUG:

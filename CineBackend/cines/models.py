@@ -1,8 +1,7 @@
 from django.db import models
 
-# Create your models here.
 class Cine(models.Model):
-    FUNCTION_TYPE_CHOICES = [
+    TIPOS_DE_FUNCION = [
         ('2D', '2D'),
         ('3D', '3D'),
         ('REGULAR', 'Regular'),
@@ -10,16 +9,17 @@ class Cine(models.Model):
 
     nombre = models.CharField(max_length=255)
     ubicacion = models.CharField(max_length=255)
-    function_types = models.ManyToManyField(
-        'FunctionType',
-        help_text="Select function types available in this theater"
+    tipos_funcion = models.ManyToManyField(
+        'TipoFuncion',
+        help_text="Seleccione los tipos de funciones disponibles en este cine"
     )
 
     def __str__(self):
-        return self.name
+        return self.nombre
 
-class FunctionType(models.Model):
-    name = models.CharField(max_length=20, choices=Cine.FUNCTION_TYPE_CHOICES, unique=True)
+
+class TipoFuncion(models.Model):
+    nombre = models.CharField(max_length=20, choices=Cine.TIPOS_DE_FUNCION, unique=True)
 
     def __str__(self):
-        return self.name
+        return self.nombre
