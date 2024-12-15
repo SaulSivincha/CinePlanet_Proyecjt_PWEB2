@@ -26,14 +26,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'users',
-    'movies',
-    'concessions',
-    'promotions',
-    'theaters',
-    'cart',
     'corsheaders',
     'rest_framework',
+    'carrito',
+    'cines',
+    'dulceria',
+    'peliculas',
+    'promociones',
+    'usuarios',
 ]
 
 MIDDLEWARE = [
