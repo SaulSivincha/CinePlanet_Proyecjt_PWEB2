@@ -38,4 +38,4 @@ function Footer2() {
       </footer>
     );
   }
-export default Footer2;
+export default Footer2;         

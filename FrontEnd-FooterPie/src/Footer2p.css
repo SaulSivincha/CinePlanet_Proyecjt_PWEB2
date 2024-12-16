@@ -1,7 +1,7 @@
 .footer-top {
-  background-color: white; /* Fondo blanco */
-  border-top: 7px solid #ff0066; /* Franja rosa de 7px de grosor */
-  padding: 10px 0; /* Reducción de espaciado superior e inferior */
+  background-color: white;
+  border-top: 7px solid #ff0066;
+  padding: 10px 0; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,24 +9,24 @@
 
 .footer-top .container {
   max-width: 100%;
-  padding: 0 15px; /* Agregar un pequeño espaciado horizontal */
+  padding: 0 15px; 
 }
 
 .footer-top .d-flex {
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Permite que los elementos se ajusten cuando es necesario */
+  flex-wrap: wrap;
 }
 
 .footer-top a {
-  margin-right: 15px; /* Reducir margen derecho */
+  margin-right: 15px; 
   font-weight: bold;
   text-decoration: none;
-  color: #000; /* Color de texto negro */
+  color: #000; 
 }
 
 .footer-top a:hover {
-  color: #ff0080; /* Cambio de color al pasar el mouse */
+  color: #ff0080; 
 }
 
 .footer-top img {
@@ -35,11 +35,11 @@
 }
 
 .footer-top .text-light {
-  color: #000 !important; /* Color negro para los textos */
+  color: #000 !important; 
 }
 
 .footer-top .text-light:hover {
-  color: #ff0080; /* Cambio de color al pasar el mouse */
+  color: #ff0080;
 }
 
 .footer-span {
@@ -47,7 +47,7 @@
   font-weight: bold;
   color: black;
   align-items: center;
-  margin-left: 10px; /* Reducir margen izquierdo */
-  margin-right: 10px; /* Reducir margen derecho */
-  margin-bottom: 0px; /* Reducir espacio inferior */
+  margin-left: 10px;
+  margin-right: 10px; 
+  margin-bottom: 0px; 
 }

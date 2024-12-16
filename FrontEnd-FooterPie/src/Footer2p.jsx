@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './Footer2p.css'
 import './index.css'
 function Footer2() {
@@ -9,7 +6,6 @@ function Footer2() {
             <div className="container">
                 {/* Parte Inferior */}
                 <div className=" d-flex justify-content-between align-items-center">
-                    {/* Redes Sociales */}
                     <div>
                         <span className='footer-span'>Síguenos en: </span>
                         <a href="https://www.facebook.com" className="text-light me-2">
@@ -25,7 +21,6 @@ function Footer2() {
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjXjZ-E4L7LhLsTL3lfksqQ75V15UVxTcBp9qco5Ap7HzR0ykx" alt="Instagram" style={{ width: "50px", height: "50px" }} />
                         </a>
                     </div>
-                    {/* Descarga App */}
                     <div>
                         <span className='footer-span'>Descarga la app: </span>
                         <a href="#" className="text-light me-2">
@@ -35,7 +30,6 @@ function Footer2() {
                             <img src="https://w7.pngwing.com/pngs/566/77/png-transparent-apple-logo-apple-watch-logo-apple-logo-heart-logo-computer-wallpaper-thumbnail.png" alt="Apple" style={{ width: "50px", height: "50px" }} />
                         </a>
                     </div>
-                    {/* Libro de Reclamaciones */}
                     <a href="/libro-reclamaciones" className="">
                     <img src="https://compudiskett.com.pe/reclamaciones/img/libro.png" alt="PlayStore" style={{ width: "45px", height: "45px" }} />
                     Libro de Reclamaciones</a>
