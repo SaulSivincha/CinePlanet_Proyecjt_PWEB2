@@ -1,0 +1,10 @@
+.promocionBar > :nth-child(odd) {
+  background-color: white; 
+}
+
+.promocionBar > :nth-child(even) {
+}
+
+.promocionBar{
+  margin: 0%;
+}
