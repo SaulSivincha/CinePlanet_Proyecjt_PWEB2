@@ -9,6 +9,7 @@ import Dulceria from './components/Dulceria';
 function App() {
     return (
         <Router>
+            <NavBar />
             <Routes>
                 <Route path="/" element={<Peliculas />} />
                 <Route path="/cines" element={<Cines />} />
