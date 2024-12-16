@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../styles/stylePeliculas/Loadmore.css/";
+import "../../styles/stylePeliculas/LoadMore.css";
 
 function LoadMore() {
   return (
