@@ -1,0 +1,53 @@
+.footer-top {
+  background-color: white; /* Fondo blanco */
+  border-top: 7px solid #ff0066; /* Franja rosa de 7px de grosor */
+  padding: 10px 0; /* Reducción de espaciado superior e inferior */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-top .container {
+  max-width: 100%;
+  padding: 0 15px; /* Agregar un pequeño espaciado horizontal */
+}
+
+.footer-top .d-flex {
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten cuando es necesario */
+}
+
+.footer-top a {
+  margin-right: 15px; /* Reducir margen derecho */
+  font-weight: bold;
+  text-decoration: none;
+  color: #000; /* Color de texto negro */
+}
+
+.footer-top a:hover {
+  color: #ff0080; /* Cambio de color al pasar el mouse */
+}
+
+.footer-top img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-top .text-light {
+  color: #000 !important; /* Color negro para los textos */
+}
+
+.footer-top .text-light:hover {
+  color: #ff0080; /* Cambio de color al pasar el mouse */
+}
+
+.footer-span {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  align-items: center;
+  margin-left: 10px; /* Reducir margen izquierdo */
+  margin-right: 10px; /* Reducir margen derecho */
+  margin-bottom: 0px; /* Reducir espacio inferior */
+}

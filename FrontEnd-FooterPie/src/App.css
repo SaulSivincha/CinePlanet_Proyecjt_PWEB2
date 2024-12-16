@@ -1,42 +1,94 @@
-#root {
+/* Estilos para las secciones dentro de Footer */
+.section-content {
+  margin-top: 30px;  /* Aumenta el margen superior */
+  margin-bottom: 30px; /* Aumenta el margen inferior */
+}
+
+/* Espaciado entre los elementos de la lista */
+.section-content ul li {
+  margin-bottom: 30px; /* Separación entre los elementos de la lista */
+  line-height: 30px; /* Aumenta el interlineado a 30px */
+}
+
+/* Estilos adicionales para el footer */
+.footer-bg {
+  background-color: #0b1a33;
+  color: #ffffff;
+  padding: 50px 0; /* Aumenta el padding superior e inferior */
+}
+
+.footer-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.footer-container .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Usa espacio entre las columnas */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer-container .col-md-4 {
+  flex: 0 0 32%;  /* Asegura que las columnas ocupen el 32% de ancho */
+  margin-bottom: 30px; /* Espacio entre las columnas */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.footer-container a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.card {
-  padding: 2em;
+.footer-container a:hover {
+  color: #e63946;
 }
 
-.read-the-docs {
-  color: #888;
+.footer-container .btn-outline-light {
+  border-color: #ffffff;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-container .btn-outline-light:hover {
+  background-color: #e63946;
+  border-color: #e63946;
+  color: #ffffff;
+}
+
+/* Imagen en footer */
+.footer-container img {
+  max-width: 120px;
+  margin-top: 20px; /* Da más espacio arriba de la imagen */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-container ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-container ul li a:hover {
+  color: #e63946;
+}
+
+/* Márgenes adicionales para enlaces específicos */
+.footer-container ul li a.text-light.text-decoration-none {
+  margin-top: 20px; /* Mayor espacio superior */
+  margin-bottom: 20px; /* Mayor espacio inferior */
+  display: block; /* Asegura que se comporten como bloques separados */
+}
+
+/* Ajustes generales para mejorar la separación de las secciones */
+.section-content h5 {
+  font-size: 18px;
+  margin-bottom: 25px;  /* Mayor separación entre título y lista */
+}
+
+.section-content ul {
+  padding-left: 20px; /* Agrega padding a la lista para más separación */
 }
