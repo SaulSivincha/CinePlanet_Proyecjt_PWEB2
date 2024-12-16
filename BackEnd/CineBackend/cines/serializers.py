@@ -12,4 +12,4 @@ class CineSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Cine
-        fields = ['id', 'nombre', 'ubicacion', 'tipos_funcion']
+        fields = '__all__'

@@ -13,7 +13,8 @@ class Cine(models.Model):
         'TipoFuncion',
         help_text="Seleccione los tipos de funciones disponibles en este cine"
     )
-
+    foto_sede = models.ImageField(upload_to='cines/sedes/', blank=True, null=True)
+    
     def __str__(self):
         return self.nombre
 
