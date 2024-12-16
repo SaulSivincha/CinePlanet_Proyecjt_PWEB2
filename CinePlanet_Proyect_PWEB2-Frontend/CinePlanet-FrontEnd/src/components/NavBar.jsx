@@ -14,6 +14,7 @@ function NavBar() {
                 <li><button onClick={() => navigate('/dulceria')}>Dulcería</button></li>
                 <li><button onClick={() => navigate('/cuenta')}><i class="bi bi-person-circle"></i> </button></li>
                 <li><button onClick={() => navigate('/carrito')}><i class="bi bi-cart4"></i></button></li>
+                
             </ul>
         </nav>
     );
