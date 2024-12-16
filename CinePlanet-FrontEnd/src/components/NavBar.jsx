@@ -12,6 +12,7 @@ function NavBar() {
                 <li><button onClick={() => navigate('/promociones')}>Promociones</button></li>
                 <li><button onClick={() => navigate('/dulceria')}>Dulcería</button></li>
                 <li><button onClick={() => navigate('/carrito')}>Carrito</button></li>
+                <li><button onClick={() => navigate('/homepage')}>Home</button></li>
             </ul>
         </nav>
     );
