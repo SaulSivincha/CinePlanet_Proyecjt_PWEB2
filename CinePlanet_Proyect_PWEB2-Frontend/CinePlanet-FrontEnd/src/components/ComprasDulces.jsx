@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/ComprasDulces.css';
 
-function ComprasDulces({ productosSeleccionados }) {
+function CompraDulces({ productosSeleccionados }) {
   const [compras, setCompras] = useState([]);
 
   useEffect(() => {
@@ -11,6 +11,12 @@ function ComprasDulces({ productosSeleccionados }) {
   const actualizarCantidad = (index, cantidad) => {
     const nuevoCompras = [...compras];
     nuevoCompras[index].cantidad = cantidad;
+    setCompras(nuevoCompras);
+  };
+
+  const eliminarProducto = (index) => {
+    const nuevoCompras = [...compras];
+    nuevoCompras.splice(index, 1);
     setCompras(nuevoCompras);
   };
 
@@ -38,6 +44,7 @@ function ComprasDulces({ productosSeleccionados }) {
               onChange={(e) => actualizarCantidad(index, parseInt(e.target.value))}
             />
             <span>Precio: S/{(item.precio * item.cantidad).toFixed(2)}</span>
+            <button type="button" onClick={() => eliminarProducto(index)} className="boton-eliminar">Eliminar</button>
           </div>
         </div>
       ))}
@@ -49,5 +56,5 @@ function ComprasDulces({ productosSeleccionados }) {
   );
 }
 
-export default ComprasDulces;
+export default CompraDulces;
 
