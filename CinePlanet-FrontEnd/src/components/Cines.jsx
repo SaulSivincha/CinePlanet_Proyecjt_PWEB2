@@ -1,9 +1,16 @@
 import NavBar from './NavBar.jsx';
-import '../styles/Cines.css';
+import CinePage from './CinePage.jsx';
+import FooterP1 from './FooterP1.jsx';
+import FooterP2 from './FooterP2.jsx';
+
+
 function Cines() {
     return (
         <div>
             <NavBar />
+            <CinePage/>
+            <FooterP1 />
+            <FooterP2 />
         </div>
     )
 }
