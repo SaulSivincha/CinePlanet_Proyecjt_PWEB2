@@ -2,11 +2,11 @@ import NavBar from './NavBar.jsx';
 import CinePage from './CinePage.jsx';
 import FooterP1 from './FooterP1.jsx';
 import FooterP2 from './FooterP2.jsx';
-
+import '../styles/cines.css';
 
 function Cines() {
     return (
-        <div>
+        <div className='PaginaCines'>
             <NavBar />
             <CinePage/>
             <FooterP1 />

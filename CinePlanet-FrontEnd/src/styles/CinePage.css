@@ -4,10 +4,9 @@
     text-align:left;
     font-size: 3rem;
     color: #ffffff;
-    padding-left: 50px;
+    padding-left: 80px;
     padding-top: 10px;
     padding-bottom: 3px;
-    
 }
 
 .cine-grid {
@@ -18,9 +17,10 @@
     width: 100%;
     align-items: center;
     background-color: #ffffff;
-    padding-inline: 30px; 
+    padding-inline: 80px; 
     justify-content: center; 
-    max-width: 1200px;
+    max-width: 1700px;
+    
 
 }
 .cajatitle {
