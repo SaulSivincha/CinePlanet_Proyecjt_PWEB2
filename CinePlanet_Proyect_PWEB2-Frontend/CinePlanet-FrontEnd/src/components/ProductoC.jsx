@@ -1,13 +1,16 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import '../styles/Dulceria.css';
 
 function ProductoC({ imagen_url, nombre, descripcion, precio, actualizarTotal }) {
   const [cantidad, setCantidad] = useState(0);
 
+  // Convertir precio a número para evitar errores
+  const precioNumerico = Number(precio);
+
   const agregarProducto = () => {
     setCantidad((prevCantidad) => {
       const nuevaCantidad = prevCantidad + 1;
-      actualizarTotal(precio); 
+      actualizarTotal(precioNumerico); // Usamos precio como número
       return nuevaCantidad;
     });
   };
@@ -16,7 +19,7 @@ function ProductoC({ imagen_url, nombre, descripcion, precio, actualizarTotal })
     setCantidad((prevCantidad) => {
       if (prevCantidad > 0) {
         const nuevaCantidad = prevCantidad - 1;
-        actualizarTotal(-precio); 
+        actualizarTotal(-precioNumerico); // Restamos el precio como número
         return nuevaCantidad;
       }
       return prevCantidad;
@@ -34,7 +37,7 @@ function ProductoC({ imagen_url, nombre, descripcion, precio, actualizarTotal })
           <span>{descripcion}</span>
         </p>
         <p className="precio">
-          <strong>S/ {precio.toFixed(2)}</strong>
+          <strong>S/ {precioNumerico.toFixed(2)}</strong> {/* Convertimos precio a número */}
         </p>
         <div className="controles">
           <button className="boton" onClick={quitarProducto}>
