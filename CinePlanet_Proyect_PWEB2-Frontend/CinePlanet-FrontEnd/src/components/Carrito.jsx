@@ -1,6 +1,4 @@
 import React from 'react';
-import FooterP1 from './FooterP1.jsx';
-import FooterP2 from './FooterP2.jsx';
 import ComprasDulces from './ComprasDulces.jsx';
 import ComprasFunsion from './ComprasFunsion.jsx';  // Importa el nuevo componente
 
@@ -26,8 +24,6 @@ function Carrito() {
       <ComprasDulces productosSeleccionados={productosSeleccionados} />
       {/* Incluir Compras Funsion con productos de ejemplo */}
       <ComprasFunsion productosSeleccionados={productosSeleccionados} />
-      <FooterP1 />
-      <FooterP2 />         
     </div>
   );
 }       

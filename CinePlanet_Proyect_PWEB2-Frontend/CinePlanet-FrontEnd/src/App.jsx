@@ -7,6 +7,9 @@ import Promociones from './components/Promociones';
 import Dulceria from './components/Dulceria';
 import Homepage from './components/homepage';
 import Carrito from './components/Carrito';
+import Socio from './components/Socio';
+import FooterP1 from './components/FooterP1';
+import FooterP2 from './components/FooterP2';
 
 function App() {
     return (
@@ -20,7 +23,10 @@ function App() {
                 <Route path="/dulceria" element={<Dulceria />} />
                 <Route path="/homepage" element={<Homepage />} />
                 <Route path="/carrito" element={<Carrito />} />
+                <Route path="./socio" element={<Socio />} />
             </Routes>
+            <FooterP1 />
+            <FooterP2 />
         </Router>
     );
 }

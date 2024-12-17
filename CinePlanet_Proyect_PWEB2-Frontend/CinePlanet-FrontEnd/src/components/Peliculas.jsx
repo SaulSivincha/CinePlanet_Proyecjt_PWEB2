@@ -4,8 +4,6 @@ import MoviesGrid from './CompPeliculas/MoviesGrid.jsx';
 import LoadMore from './CompPeliculas/LoadMore.jsx';
 import Funsion from './CompPeliculas/Funsion.jsx';
 import  Device  from '../devices/Device.jsx';
-import FooterP1 from './FooterP1.jsx';
-import FooterP2 from './FooterP2.jsx';
 
 function Peliculas() {
     return(
@@ -37,8 +35,6 @@ function Peliculas() {
                 </div>
             </div>
             
-            <FooterP1 />
-            <FooterP2 />
         </div>
     );
 }
