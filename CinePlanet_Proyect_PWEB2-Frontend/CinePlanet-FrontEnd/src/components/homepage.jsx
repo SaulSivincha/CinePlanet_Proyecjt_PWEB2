@@ -8,7 +8,6 @@ import Carousel from './Carousel.jsx';
 function Homepage() {
     return (
       <div >
-            <NavBar />
             <Carousel />
             <Home/>
             <FooterP1 />

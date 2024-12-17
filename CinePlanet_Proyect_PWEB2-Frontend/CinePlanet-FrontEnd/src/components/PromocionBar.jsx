@@ -4,8 +4,6 @@ function PromocionBar  () {
     return (
         <div className = "promocionBar">
             <Promocion />
-            <Promocion />
-            <Promocion />
         </div>
     );
 };

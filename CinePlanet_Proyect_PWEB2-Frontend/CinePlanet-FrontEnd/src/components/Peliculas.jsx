@@ -9,9 +9,7 @@ import FooterP2 from './FooterP2.jsx';
 
 function Peliculas() {
     return(
-        <div>
-             <NavBar/>
-             
+        <div>             
              <div className="container mt-3">
                 
                 <div className="row mb-3">

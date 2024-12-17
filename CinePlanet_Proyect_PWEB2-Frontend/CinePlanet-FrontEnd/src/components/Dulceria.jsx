@@ -7,7 +7,6 @@ import FooterP2 from './FooterP2.jsx';
 function Dulceria() {
     return (
          <div>
-            <NavBar />
             <DulceriaP />
             <FooterP1 />
             <FooterP2 />

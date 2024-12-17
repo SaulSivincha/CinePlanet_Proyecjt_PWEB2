@@ -7,7 +7,6 @@ import FooterP2 from './FooterP2.jsx';
 function Cines() {
     return (
         <div>
-            <NavBar />
             <CinePage/>
             <FooterP1 />
             <FooterP2 />

@@ -6,7 +6,6 @@ import FooterP2 from './FooterP2.jsx';
 function Promociones() {
     return (
         <div>
-            <NavBar />
             <PromocionBar />
             <FooterP1 />
             <FooterP2 />
