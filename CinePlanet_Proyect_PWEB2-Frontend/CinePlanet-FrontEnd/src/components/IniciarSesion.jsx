@@ -74,12 +74,13 @@ function IniciarSesion() {
     <div className="login-container">
       <div className="login-form">
         <h2 className="form-title">Iniciar Sesión</h2>
+        <h3 className='form-text-bienvenida'>Ingresa a tu cuenta para disfurtar de tus beneficios, acumular puntos y vivir al máximo la experinecia Cineplanet</h3>
         {errorMessage && <div className="error-message">{errorMessage}</div>}
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="correo" className="form-label">
-              <FaEnvelope /> Correo Electrónico
+            <i class="bi bi-envelope-fill"></i>Correo Electrónico
             </label>
             <input
               type="email"
@@ -95,7 +96,7 @@ function IniciarSesion() {
 
           <div className="form-group">
             <label htmlFor="contrasena" className="form-label">
-              <FaLock /> Contraseña
+            <i class="bi bi-lock-fill"></i>Contraseña
             </label>
             <input
               type="password"

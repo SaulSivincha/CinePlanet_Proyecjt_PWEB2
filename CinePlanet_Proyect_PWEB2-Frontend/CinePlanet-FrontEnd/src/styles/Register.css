@@ -1,0 +1,147 @@
+ .register-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .register-form {
+    width: 50%;
+    padding: 2%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-title {
+    text-align: center;
+    color: #004080;
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5vw;
+    font-weight: bold;
+    margin-bottom: 2%;
+  }
+  
+  .form-group {
+    margin-bottom: 3%; /* Espaciado entre inputs */
+  }
+  
+  .form-label {
+    font-size: 1.1vw;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-label svg {
+    margin-right: 1%; /* Espacio entre ícono y texto */
+    color: #004080;
+  }
+  
+  .form-input {
+    width: 100%;
+    font-size: 1.1vw;
+    padding: 1.5%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+  }
+  
+  .form-input:focus {
+    border-color: #0052cc;
+    outline: none;
+  }
+  
+  .form-input select {
+    appearance: none; 
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .error {
+    color: #e2003a;
+    font-size: 3vw;
+    margin-top: 0.5%;
+  }
+
+  .form-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+  }
+  .btn-register {
+    width: 50%;
+    padding: 1.5% 0;
+    background: linear-gradient(180deg, #0052cc, #003da6); 
+    color: #ffffff;
+    font-size: 1.1vw;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-register:hover {
+    background: linear-gradient(180deg, #c90033, #a00028);
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .register-form {
+        width: 100%;              
+        padding: 4%; 
+    }
+  
+    .form-title {
+      font-size: 6vw;
+      margin-bottom: 5%;
+    }
+  
+    .form-label {
+      font-size: 4vw;
+    }
+  
+    .form-input {
+      font-size: 3.5vw;
+      padding: 3%;
+    }
+    .error {
+        font-size-adjust: calc(1.5);
+    }
+    
+    .btn-register {
+        margin-top: 2%;
+        font-size: 3.5vw;  
+    }
+  
+  }
+  
+  /* Media Query para pantallas grandes */
+  @media (min-width: 1200px) {
+    .register-form {
+      width: 35%;
+      padding: 2.5%;
+    }
+  
+    .form-title {
+      font-size: 1.8vw;
+    }
+  
+    .form-label {
+      font-size: 1vw;
+    }
+  
+    .form-input {
+      font-size: 1vw;
+      padding: 1%;
+    }
+  
+    .btn-register {
+      font-size: 1vw;
+    }
+  }
+  
