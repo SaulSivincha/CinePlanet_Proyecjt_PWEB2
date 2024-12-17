@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaUser, FaEnvelope, FaLock, FaPhoneAlt } from 'react-icons/fa'; // Ejemplo de iconos
+import axios from 'axios';
+import { FaUser, FaEnvelope, FaLock, FaPhoneAlt } from 'react-icons/fa';
 import '../styles/Register.css';
 
 function Register() {
@@ -8,7 +9,7 @@ function Register() {
     apellidos: '',
     correo: '',
     fechaNacimiento: '',
-    numeroCelular: '',
+    numero_celular: '',
     sexo: '',
     contrasena: '',
     confirmarContrasena: '',
@@ -16,6 +17,7 @@ function Register() {
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,8 +34,8 @@ function Register() {
     if (!formData.correo || !/\S+@\S+\.\S+/.test(formData.correo))
       formErrors.correo = 'El correo electrónico es inválido';
     if (!formData.fechaNacimiento) formErrors.fechaNacimiento = 'La fecha de nacimiento es obligatoria';
-    if (!formData.numeroCelular || !/^\d{9}$/.test(formData.numeroCelular))
-      formErrors.numeroCelular = 'El número de celular debe tener 9 dígitos';
+    if (!formData.numero_celular || !/^\d{9}$/.test(formData.numero_celular))
+      formErrors.numero_celular = 'El número de celular debe tener 9 dígitos';
     if (!formData.sexo) formErrors.sexo = 'Selecciona un sexo';
     if (!formData.contrasena || formData.contrasena.length < 8)
       formErrors.contrasena = 'La contraseña debe tener al menos 8 caracteres';
@@ -43,12 +45,41 @@ function Register() {
     return formErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formErrors = validateForm();
     if (Object.keys(formErrors).length === 0) {
+      console.log('Datos enviados:', formData);
       setIsSubmitting(true);
-      // Aquí puedes agregar la lógica para enviar el formulario al backend
+      try {
+        const response = await axios.post('http://localhost:8000/usuarios/register/', {
+          nombres: formData.nombres,
+          apellidos: formData.apellidos,
+          correo: formData.correo,
+          fecha_nacimiento: formData.fechaNacimiento,
+          numero_celular: formData.numero_celular,
+          sexo: formData.sexo,
+          contrasena: formData.contrasena,
+        });
+        setSuccessMessage(response.data.mensaje);
+        setFormData({
+          nombres: '',
+          apellidos: '',
+          correo: '',
+          fechaNacimiento: '',
+          numero_celular: '',
+          sexo: '',
+          contrasena: '',
+        });
+      } catch (error) {
+        if (error.response) {
+          setErrors(error.response.data);
+        } else {
+          console.error('Error al registrar usuario:', error.message);
+        }
+      } finally {
+        setIsSubmitting(false);
+      }
       console.log('Formulario enviado:', formData);
     } else {
       setErrors(formErrors);
@@ -124,19 +155,19 @@ function Register() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="numeroCelular" className="form-label">
+            <label htmlFor="numero_celular" className="form-label">
               <FaPhoneAlt /> Número de Celular
             </label>
             <input
               type="text"
-              id="numeroCelular"
-              name="numeroCelular"
-              value={formData.numeroCelular}
+              id="numero_celular"
+              name="numero_celular"
+              value={formData.numero_celular}
               onChange={handleChange}
               placeholder="Número de Celular"
               className="form-input"
             />
-            {errors.numeroCelular && <span className="error">{errors.numeroCelular}</span>}
+            {errors.numero_celular && <span className="error">{errors.numero_celular}</span>}
           </div>
 
           <div className="form-group">
@@ -191,10 +222,9 @@ function Register() {
               <span className="error">{errors.confirmarContrasena}</span>
             )}
           </div>
-
           <div className="form-buttons">
-            <button type="button" className="btn-login">
-              Iniciar Sesión
+            <button type="submit" className="btn-register" disabled={isSubmitting}>
+              Registrarse
             </button>
           </div>
         </form>

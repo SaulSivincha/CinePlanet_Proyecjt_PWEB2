@@ -1,4 +1,6 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import UsuarioNavBar from './UsuarioNavBar';
 import '../styles/NavBar.css';
 
 function NavBar() {
@@ -12,13 +14,11 @@ function NavBar() {
                 <li><button onClick={() => navigate('/peliculas')}>Películas</button></li>
                 <li><button onClick={() => navigate('/promociones')}>Promociones</button></li>
                 <li><button onClick={() => navigate('/dulceria')}>Dulcería</button></li>
-                <li><button onClick={() => navigate('/socio')}><i class="bi bi-person-circle"></i> </button></li>
-                <li><button onClick={() => navigate('/carrito')}><i class="bi bi-cart4"></i></button></li>
-                
+                <li><button onClick={() => navigate('/carrito')}><i className="bi bi-cart4"></i></button></li>
+                <UsuarioNavBar />
             </ul>
         </nav>
     );
 }
 
 export default NavBar;
-

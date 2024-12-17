@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../styles/IniciarSesion.css';
+
 function IniciarSesion() {
   const [formData, setFormData] = useState({
     correo: '',
-    contrasena: ''
+    contrasena: '',
   });
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate(); // Inicializa navigate
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,13 +33,38 @@ function IniciarSesion() {
     return formErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formErrors = validateForm();
     if (Object.keys(formErrors).length === 0) {
       setIsSubmitting(true);
-      // lógica para enviar el formulario al backend
-      console.log('Iniciando sesión con:', formData);
+      try {
+        const response = await axios.post('http://localhost:8000/usuarios/token/', {
+          correo: formData.correo,
+          contrasena: formData.contrasena,
+        });
+
+        if (response.data.access && response.data.refresh) {
+          localStorage.setItem('access_token', response.data.access);
+          localStorage.setItem('refresh_token', response.data.refresh);
+          localStorage.setItem('nombres', response.data.nombres);
+          localStorage.setItem('apellidos', response.data.apellidos);
+
+          navigate('/homepage');
+        } else {
+          setErrorMessage('Respuesta inválida del servidor.');
+        }
+      } catch (error) {
+        if (error.response) {
+          console.error('Error del servidor:', error.response.data);
+          setErrorMessage(error.response.data.detail || 'Credenciales incorrectas. Inténtalo de nuevo.');
+        } else {
+          console.error('Error general:', error.message);
+          setErrorMessage('Error de conexión con el servidor.');
+        }
+      } finally {
+        setIsSubmitting(false);
+      }
     } else {
       setErrors(formErrors);
     }
@@ -44,6 +74,8 @@ function IniciarSesion() {
     <div className="login-container">
       <div className="login-form">
         <h2 className="form-title">Iniciar Sesión</h2>
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
+
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="correo" className="form-label">
@@ -89,4 +121,3 @@ function IniciarSesion() {
 }
 
 export default IniciarSesion;
-
