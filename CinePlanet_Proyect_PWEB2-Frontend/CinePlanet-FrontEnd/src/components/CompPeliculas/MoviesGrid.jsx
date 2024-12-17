@@ -2,32 +2,26 @@ import React, { useState } from "react";
 import "../../styles/stylePeliculas/MoviesGrid.css";
 
 function MoviesGrid() {
-  const [activeTab, setActiveTab] = useState("cartelera");
+  const [selected, setSelected] = useState("enCartelera"); // Estado para controlar selección
 
   return (
-    <section className="movies-header container">
-      <h1 className="movies-title">Películas</h1>
-      <nav className="movies-nav">
-        <ul>
-          <li>
-            <button
-              className={`nav-link ${activeTab === "cartelera" ? "active" : ""}`}
-              onClick={() => setActiveTab("cartelera")}
-            >
-              En cartelera
-            </button>
-          </li>
-          <li>
-            <button
-              className={`nav-link ${activeTab === "estrenos" ? "active" : ""}`}
-              onClick={() => setActiveTab("estrenos")}
-            >
-              Próximos estrenos
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </section>
+      <div className="movies-grid">
+          <div className="movies-title">Películas</div>
+          <div className="movies-buttons">
+              <button
+                  className={`movies-btn ${selected === "enCartelera" ? "active" : ""}`}
+                  onClick={() => setSelected("enCartelera")}
+              >
+                  Cartelera
+              </button>
+              <button
+                  className={`movies-btn ${selected === "proximosEstrenos" ? "active" : ""}`}
+                  onClick={() => setSelected("proximosEstrenos")}
+              >
+                  Próximos estrenos
+              </button>
+          </div>
+      </div>
   );
 }
 
