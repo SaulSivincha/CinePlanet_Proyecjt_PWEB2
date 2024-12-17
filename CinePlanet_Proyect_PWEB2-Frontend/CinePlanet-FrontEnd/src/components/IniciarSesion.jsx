@@ -81,9 +81,6 @@ function IniciarSesion() {
             <button type="submit" className="btn-login" disabled={isSubmitting}>
               {isSubmitting ? 'Iniciando sesión...' : 'Iniciar Sesión'}
             </button>
-            <button type="button" className="btn-register">
-              Registrarse
-            </button>
           </div>
         </form>
       </div>

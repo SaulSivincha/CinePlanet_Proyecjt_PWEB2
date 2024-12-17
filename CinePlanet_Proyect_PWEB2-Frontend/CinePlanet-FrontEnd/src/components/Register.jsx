@@ -193,9 +193,6 @@ function Register() {
           </div>
 
           <div className="form-buttons">
-            <button type="submit" className="btn-register" disabled={isSubmitting}>
-              {isSubmitting ? 'Registrando...' : 'Registrar'}
-            </button>
             <button type="button" className="btn-login">
               Iniciar Sesión
             </button>
