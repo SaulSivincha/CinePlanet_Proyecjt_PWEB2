@@ -1,31 +1,36 @@
 .title {
-    margin-bottom: 5%; /* Cambiado de 20px a un porcentaje relativo */
+    margin-bottom: 5%; 
     text-align: left;
-    font-size: 3rem; /* Mantengo el tamaño en rem para consistencia con el diseño general */
+    font-size: 3rem;
     color: #ffffff;
-    padding-left: 5%; /* Cambiado de 80px a un porcentaje relativo */
-    padding-top: 1%; /* Cambiado de 10px a un porcentaje relativo */
-    padding-bottom: 0.5%; /* Cambiado de 3px a un porcentaje relativo */
+    padding-left: 5%; 
+    padding-top: 5%; 
+    
 }
 
 .cine-grid {
-    gap: 2%; /* Cambiado de 30px a un porcentaje relativo */
+    gap: 2%; 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding-block: 2%; /* Ya estaba en porcentaje */
+    padding-block: 2%; 
     width: 100%;
     align-items: center;
     background-color: #ffffff;
-    padding-inline: 5%; /* Cambiado de 80px a un porcentaje relativo */
+    padding-inline: 5%; 
     justify-content: center; 
-    max-width: 95%; /* Cambiado de 1700px a un porcentaje relativo del contenedor */
+    max-width: 95%; 
 }
 
 .cajatitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: #0b1a33;
-    width: 100%;
-    height: 10%; /* Cambiado de 80px a un porcentaje relativo del contenedor */
+    width: 100%; 
+    height: 10vh; 
+    padding: 0 5%; 
 }
+
 
 .caja-pagina {
     width: 100%;
