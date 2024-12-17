@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from './NavBar.jsx';
 import FooterP1 from './FooterP1.jsx';
 import FooterP2 from './FooterP2.jsx';
 import ComprasDulces from './ComprasDulces.jsx';
@@ -23,7 +22,6 @@ function Carrito() {
 
   return (
     <div>
-      <NavBar />
       {/* Incluir Compras Dulces con productos de ejemplo */}
       <ComprasDulces productosSeleccionados={productosSeleccionados} />
       {/* Incluir Compras Funsion con productos de ejemplo */}

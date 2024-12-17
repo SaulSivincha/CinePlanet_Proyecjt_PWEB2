@@ -1,0 +1,69 @@
+.compras-formulario {
+  background-color: #f8f8f8; 
+  color: #0B1A33; 
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  margin: 80px auto 20px auto; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.producto-en-compras {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #0B1A33; 
+  padding-bottom: 10px;
+}
+
+.producto-en-compras img {
+  width: 150px;
+  height: 150px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.producto-en-compras input[type="number"] {
+  padding: 5px;
+  margin-right: 10px;
+  width: 50px;
+  border: 1px solid #0B1A33; 
+  border-radius: 4px;
+  text-align: center;
+}
+
+.total-compras {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 1.5em;
+}
+
+.boton-confirmar-compras {
+  background-color: #0B1A33; 
+  color: #ffffff; 
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.boton-confirmar-compras:hover {
+  background-color: #ffffff; 
+  color: #0B1A33; 
+}
+
+.boton-eliminar {
+  margin-left: 10px;
+  background-color: #FF6347; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.boton-eliminar:hover {
+  background-color: #FF4500; 
+}

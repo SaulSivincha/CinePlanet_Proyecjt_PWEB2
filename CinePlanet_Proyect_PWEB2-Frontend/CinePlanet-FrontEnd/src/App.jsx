@@ -6,6 +6,7 @@ import Peliculas from './components/Peliculas';
 import Promociones from './components/Promociones';
 import Dulceria from './components/Dulceria';
 import Homepage from './components/homepage';
+import Carrito from './components/Carrito';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/promociones" element={<Promociones />} />
                 <Route path="/dulceria" element={<Dulceria />} />
                 <Route path="/homepage" element={<Homepage />} />
+                <Route path="/carrito" element={<Carrito />} />
             </Routes>
         </Router>
     );
