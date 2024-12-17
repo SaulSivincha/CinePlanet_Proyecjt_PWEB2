@@ -30,7 +30,7 @@ function CinePage() {
             key={index}
             nombre={cine.nombre}
             direccion={cine.ubicacion}
-            imagen={`http://localhost:8000${cine.foto_sede}`}
+            imagen={'http://localhost:8000${cine.foto_sede}'}
             formatos={cine.tipos_funcion.map((tipo) => tipo.nombre)}
           />
         ))}
