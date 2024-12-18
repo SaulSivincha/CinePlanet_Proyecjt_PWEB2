@@ -12,8 +12,9 @@ function UsuarioNavBar() {
     localStorage.removeItem('refresh_token');
     localStorage.removeItem('nombres');
     localStorage.removeItem('apellidos');
+    localStorage.removeItem('esAdmin');
     console.log('Sesión cerrada.');
-    navigate('/');
+    navigate('/homepage');
   };
 
   return (

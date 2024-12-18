@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/stylePeliculas/FormFunsion.css/";
-
+import axios from 'axios';
 
 function FormFunsion() {
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ function FormFunsion() {
     imagen: null,
   });
 
-  const [preview, setPreview] = useState(null); // Previsualización de la imagen
+  const [preview, setPreview] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +27,6 @@ function FormFunsion() {
       imagen: file,
     });
 
-    // Mostrar previsualización de la imagen
     if (file) {
       setPreview(URL.createObjectURL(file));
     }
@@ -44,7 +43,6 @@ function FormFunsion() {
       <form onSubmit={handleSubmit} className="formulario shadow-sm p-4 rounded">
         <h2 className="form-title">Añadir Película</h2>
 
-        {/* Campo para subir imagen */}
         <div className="form-group mb-3">
           <label className="form-label">Subir Imagen</label>
           <input
@@ -56,7 +54,6 @@ function FormFunsion() {
           {preview && <img src={preview} alt="Previsualización" className="img-preview mt-2" />}
         </div>
 
-        {/* Título */}
         <div className="form-group mb-3">
           <label className="form-label">Título de la Película</label>
           <input
@@ -70,7 +67,6 @@ function FormFunsion() {
           />
         </div>
 
-        {/* Fecha de lanzamiento */}
         <div className="form-group mb-3">
           <label className="form-label">Fecha de Lanzamiento</label>
           <input
@@ -83,7 +79,6 @@ function FormFunsion() {
           />
         </div>
 
-        {/* Botón de envío */}
         <div className="form-buttons">
           <button type="submit" className="btn">Guardar Película</button>
         </div>

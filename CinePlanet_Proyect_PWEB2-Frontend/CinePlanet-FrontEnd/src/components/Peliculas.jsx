@@ -7,6 +7,7 @@ import EliminarFunsion from './CompPeliculas/EliminarFunsion.jsx';
 import  Device  from '../devices/Device.jsx';
 
 function Peliculas() {
+    const esAdmin = localStorage.getItem('esAdmin') === 'true';
     return(
         <div> 
 
@@ -32,17 +33,21 @@ function Peliculas() {
                             </div>
                         </div>
 
+                        {esAdmin && (
                         <div className="row">
                             <div className="col-12">
-                                <FormFunsion />
+                            <FormFunsion />
                             </div>
                         </div>
+                        )}
 
+                        {esAdmin && (
                         <div className="row">
                             <div className="col-12">
-                                <EliminarFunsion />
+                            <EliminarFunsion />
                             </div>
                         </div>
+                        )}
 
                     </div>
 

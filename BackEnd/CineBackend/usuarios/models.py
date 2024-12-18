@@ -15,6 +15,7 @@ class Usuario(models.Model):
     numero_celular = models.CharField(max_length=15, unique=True)
     sexo = models.CharField(max_length=1, choices=Opciones_Sexo)
     contrasena = models.CharField(max_length=128)
+    es_admin = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if not self.pk or not self.contrasena.startswith('pbkdf2_'):  

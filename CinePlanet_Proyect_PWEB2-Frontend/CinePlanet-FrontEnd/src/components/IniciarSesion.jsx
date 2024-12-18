@@ -49,6 +49,7 @@ function IniciarSesion() {
           localStorage.setItem('refresh_token', response.data.refresh);
           localStorage.setItem('nombres', response.data.nombres);
           localStorage.setItem('apellidos', response.data.apellidos);
+          localStorage.setItem('esAdmin', response.data.esAdmin);
 
           navigate('/homepage');
         } else {
