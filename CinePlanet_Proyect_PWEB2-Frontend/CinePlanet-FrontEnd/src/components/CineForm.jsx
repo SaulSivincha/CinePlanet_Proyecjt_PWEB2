@@ -58,39 +58,45 @@ function CineForm({ onCineAdded }) {
       alert('Cine agregado exitosamente.');
     } catch (error) {
       console.error('Error al agregar cine:', error);
+      alert('Hubo un error al agregar el cine. Intenta nuevamente.');
     }
   };
 
   return (
     <div className="cine-form-container">
-      <h2>Agregar Nuevo Cine</h2>
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
+      <h2 className="cine-form-title">Agregar Nuevo Cine</h2>
+      <form onSubmit={handleSubmit} encType="multipart/form-data" className="cine-form">
         <div className="mb-3">
-          <label className="form-label">Nombre del Cine</label>
+          <label htmlFor="nombre" className="form-label">Nombre del Cine</label>
           <input
             type="text"
+            id="nombre"
             name="nombre"
             value={nuevoCine.nombre}
             onChange={handleInputChange}
+            placeholder="Ingrese el nombre del cine"
             required
           />
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Ubicación</label>
+          <label htmlFor="ubicacion" className="form-label">Ubicación</label>
           <input
             type="text"
+            id="ubicacion"
             name="ubicacion"
             value={nuevoCine.ubicacion}
             onChange={handleInputChange}
+            placeholder="Ingrese la ubicación"
             required
           />
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Tipos de Función</label>
+          <label htmlFor="tipos_funcion" className="form-label">Tipos de Función</label>
           <select
             multiple
+            id="tipos_funcion"
             name="tipos_funcion"
             onChange={handleTiposFuncionChange}
             className="form-select"
@@ -104,8 +110,14 @@ function CineForm({ onCineAdded }) {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Foto de la Sede</label>
-          <input type="file" name="foto_sede" onChange={handleFileChange} required />
+          <label htmlFor="foto_sede" className="form-label">Foto de la Sede</label>
+          <input
+            type="file"
+            id="foto_sede"
+            name="foto_sede"
+            onChange={handleFileChange}
+            required
+          />
         </div>
 
         <button type="submit" className="btn-submit">Agregar Cine</button>

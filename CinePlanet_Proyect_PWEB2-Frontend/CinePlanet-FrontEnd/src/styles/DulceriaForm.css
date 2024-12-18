@@ -1,123 +1,132 @@
-  .dulceria-form {
-  margin-top: 10%;
+/* Contenedor principal */
+.dulceria-form-container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  max-width: 60%;
-  margin: 1.5rem auto;
-  padding: 1.5rem;
-  background: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  align-items: center;
+  margin-top: 5%;
   font-family: Arial, sans-serif;
+  color: #003366;
 }
 
-.dulceria-form h2 {
+/* Título */
+.dulceria-form-title {
+  font-size: 2rem;
+  font-weight: bold;
   text-align: center;
-  color: #004080;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.dulceria-form label {
-  font-size: 0.95rem;
-  color: #333;
+/* Formulario */
+.dulceria-form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.dulceria-form input,
-.dulceria-form textarea {
+/* Etiquetas */
+.dulceria-form .form-label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #003366;
+}
+
+/* Inputs y textarea */
+.dulceria-form input[type="text"],
+.dulceria-form input[type="file"],
+.dulceria-form textarea,
+.dulceria-form input[type="number"] {
   width: 100%;
-  padding: 0.8rem;
+  padding: 10px;
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1rem;
-}
-
-.dulceria-form textarea {
-  resize: none;
-  min-height: 6rem;
-}
-
-.dulceria-form input:focus,
-.dulceria-form textarea:focus {
-  border-color: #004080;
   outline: none;
 }
 
-.form-buttons {
+/* Botones */
+.dulceria-form-buttons {
   display: flex;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
-.dulceria-form button {
-  flex: 1;
-  padding: 0.8rem;
-  font-size: 1rem;
+.dulceria-form .btn-submit,
+.dulceria-form .btn-edit {
+  width: 48%;
+  padding: 10px;
+  font-size: 1.1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.dulceria-form button[type="submit"] {
-  background-color: #e0004d;
-  color: #fff;
+/* Botón de agregar */
+.dulceria-form .btn-submit {
+  background-color: #d70046;
+  color: white;
 }
 
-.dulceria-form button[type="submit"]:hover {
-  background-color: #c0003c;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.dulceria-form .btn-submit:hover {
+  background-color: #b0003a;
+  transform: scale(1.05);
 }
 
-.dulceria-form button:active {
-  transform: scale(0.98);
-  box-shadow: none;
+/* Botón de editar */
+.dulceria-form .btn-edit {
+  background-color: #003366;
+  color: white;
 }
 
-.dulceria-form .edit-button {
-  background-color: #004080;
-  color: #fff;
+.dulceria-form .btn-edit:hover {
+  background-color: #002244;
+  transform: scale(1.05);
 }
 
-.dulceria-form .edit-button:hover {
-  background-color: #003060;
-}
-
+/* Responsivo */
 @media (max-width: 768px) {
   .dulceria-form {
-    max-width: 90%;
-    padding: 1rem;
+    width: 90%;
   }
 
-  .form-buttons {
-    flex-direction: column;
-    gap: 0.8rem;
+  .dulceria-form-title {
+    font-size: 1.5rem;
+  }
+
+  .dulceria-form input,
+  .dulceria-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .dulceria-form .btn-submit,
+  .dulceria-form .btn-edit {
+    font-size: 1rem;
   }
 }
-.dulceria-form .edit-button {
-  background-color: #007bff; 
-  color: #fff;
-  border: none;
-  padding: 0.8rem 1.2rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s ease;
-}
 
-.dulceria-form .edit-button:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-}
+@media (max-width: 480px) {
+  .dulceria-form-title {
+    font-size: 1.2rem;
+  }
 
-.dulceria-form .edit-button:active {
-  transform: scale(0.98); 
-  box-shadow: none;
-}
+  .dulceria-form {
+    padding: 15px;
+  }
 
-.dulceria-form .edit-button:focus {
-  outline: none; 
+  .dulceria-form input,
+  .dulceria-form textarea {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .dulceria-form .btn-submit,
+  .dulceria-form .btn-edit {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
 }

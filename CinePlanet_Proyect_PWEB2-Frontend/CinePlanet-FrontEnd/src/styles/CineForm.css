@@ -1,54 +1,119 @@
-.cine-form-overlay {
-  position: relative;
-  left: 50%;
-  margin-bottom: 2%;
-  transform: translateX(-50%);
-  width: 30%; 
-  height: 100%; 
+.cine-form-container {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  color: #003366;
+  font-family: Arial, sans-serif;
 }
 
-  
-  .cine-form-container {
-    background: rgb(255, 255, 255);
-    padding: 5%; 
-    border-radius: 10px;
-    width: 90%; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    color: #034892;
+.cine-form-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #003366;
+}
+
+.cine-form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cine-form label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #003366;
+}
+
+.cine-form input[type="text"],
+.cine-form input[type="file"],
+.cine-form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.cine-form .form-select {
+  height: auto;
+  min-height: 100px;
+}
+
+.cine-form .btn-submit {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #d70046;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cine-form .btn-submit:hover {
+  background-color: #b0003a;
+  transform: scale(1.05);
+}
+
+.cine-form .mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .cine-form {
+    width: 90%;
   }
-  
-  .close-button {
-    position: absolute;
-    top: 2%;
-    right: 2%;
-    background: none;
-    border: none;
-    font-size: 2vw; 
-    cursor: pointer;
+
+  .cine-form-title {
+    font-size: 1.5rem;
   }
-  
-  form input {
-    width: 100%;
-    margin-bottom: 5%;
-    padding: 3%; 
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+  .cine-form label {
+    font-size: 0.9rem;
   }
-  
-  form button {
-    width: 100%;
-    padding: 3%; 
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+  .cine-form input[type="text"],
+  .cine-form input[type="file"],
+  .cine-form select {
+    font-size: 0.9rem;
   }
-  
-  form button:hover {
-    background-color: #0254ab;
+
+  .cine-form .btn-submit {
+    font-size: 1rem;
   }
+}
+
+@media (max-width: 480px) {
+  .cine-form-title {
+    font-size: 1.2rem;
+  }
+
+  .cine-form {
+    padding: 15px;
+  }
+
+  .cine-form input[type="text"],
+  .cine-form input[type="file"],
+  .cine-form select {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .cine-form .btn-submit {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}

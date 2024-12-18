@@ -32,67 +32,68 @@ function DulceriaForm({ onSubmit, onEdit }) {
   };
 
   return (
-    <div className="DulceriaForm"> 
-    <form className="dulceria-form p-4 border rounded shadow" onSubmit={handleSubmit}>
-      <h2 className="text-center mb-4">Agregar Producto a la Dulcería</h2>
-
-      <div className="mb-3">
-        <label className="form-label">Imagen:</label>
-        <input
-          type="file"
-          className="form-control"
-          onChange={handleImageChange}
-          accept="image/*"
-          required
-        />
-      </div>
-
-      <div className="mb-3">
-        <label className="form-label">Título:</label>
-        <input
-          type="text"
-          className="form-control"
-          value={titulo}
-          onChange={(e) => setTitulo(e.target.value)}
-          placeholder="Nombre del producto"
-          required
-        />
-      </div>
-
-      <div className="mb-3">
-        <label className="form-label">Descripción:</label>
-        <textarea
-          className="form-control"
-          value={descripcion}
-          onChange={(e) => setDescripcion(e.target.value)}
-          placeholder="Descripción del producto"
-          required
-        ></textarea>
-      </div>
-
-      <div className="mb-3">
-        <label className="form-label">Precio:</label>
-        <div className="input-group">
-          <span className="input-group-text">S/</span>
+    <div className="dulceria-form-container">
+      <h2 className="dulceria-form-title">Agregar Producto a la Dulcería</h2>
+      <form onSubmit={handleSubmit} className="dulceria-form shadow-sm">
+        <div className="mb-3">
+          <label htmlFor="imagen" className="form-label">Imagen:</label>
           <input
-            type="number"
+            type="file"
+            id="imagen"
             className="form-control"
-            value={precio}
-            onChange={(e) => setPrecio(e.target.value)}
-            placeholder="Precio en soles"
-            step="0.01"
+            onChange={handleImageChange}
+            accept="image/*"
             required
           />
         </div>
-      </div>
 
-      <div className="d-flex justify-content-between">
-        <button type="submit" className="btn btn-primary">Agregar Producto</button>
-        <button type="button" className="btn btn-primary edit-button" onClick={handleEdit}>
-          Editar Producto
-        </button>
-      </div>
-    </form>
+        <div className="mb-3">
+          <label htmlFor="titulo" className="form-label">Título:</label>
+          <input
+            type="text"
+            id="titulo"
+            className="form-control"
+            value={titulo}
+            onChange={(e) => setTitulo(e.target.value)}
+            placeholder="Nombre del producto"
+            required
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="descripcion" className="form-label">Descripción:</label>
+          <textarea
+            id="descripcion"
+            className="form-control"
+            value={descripcion}
+            onChange={(e) => setDescripcion(e.target.value)}
+            placeholder="Descripción del producto"
+            required
+          ></textarea>
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="precio" className="form-label">Precio:</label>
+          <div className="input-group">
+            <span className="input-group-text">S/</span>
+            <input
+              type="number"
+              id="precio"
+              className="form-control"
+              value={precio}
+              onChange={(e) => setPrecio(e.target.value)}
+              placeholder="Precio en soles"
+              step="0.01"
+              required
+            />
+          </div>
+        </div>
+
+        <div className="dulceria-form-buttons">
+          <button type="submit" className="btn-submit">Agregar Producto</button>
+          <button type="button" className="btn-edit" onClick={handleEdit}>Editar Producto</button>
+        </div>
+      </form>
     </div>
   );
 }

@@ -9,7 +9,7 @@ function FormFunsion() {
     idioma: "",
     disponible: true,
     fechaLanzamiento: "",
-    poster: null, // Cambia el nombre aquí a 'poster'
+    poster: null,
   });
 
   const [preview, setPreview] = useState(null);
@@ -26,10 +26,7 @@ function FormFunsion() {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    setFormData({
-      ...formData,
-      poster: file, // Actualiza 'poster' aquí
-    });
+    setFormData({ ...formData, poster: file });
 
     if (file) {
       setPreview(URL.createObjectURL(file));
@@ -44,15 +41,12 @@ function FormFunsion() {
     data.append("idioma", formData.idioma);
     data.append("disponible", formData.disponible);
     data.append("fecha_lanzamiento", formData.fechaLanzamiento);
-    data.append("poster", formData.poster); // Asegúrate de enviar 'poster'
+    data.append("poster", formData.poster);
 
     try {
       const response = await axios.post("http://localhost:8000/peliculas/", data, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+        headers: { "Content-Type": "multipart/form-data" },
       });
-      console.log("Película guardada:", response.data);
       setSuccessMessage("Película guardada exitosamente.");
       setErrorMessage("");
       setFormData({
@@ -65,22 +59,20 @@ function FormFunsion() {
       });
       setPreview(null);
     } catch (error) {
-      console.error("Error al enviar la película:", error.response?.data || error.message);
       setErrorMessage("Error al guardar la película. Verifica los campos.");
       setSuccessMessage("");
     }
   };
 
   return (
-    <section className="formulario-container container mt-4">
-      <form onSubmit={handleSubmit} className="formulario shadow-sm p-4 rounded">
-        <h2 className="form-title">Añadir Película</h2>
-
+    <div className="form-funsion-container">
+      <h2 className="form-funsion-title">Añadir Película</h2>
+      <form onSubmit={handleSubmit} className="form-funsion shadow-sm">
         {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
         {successMessage && <div className="alert alert-success">{successMessage}</div>}
 
-        <div className="form-group mb-3">
-          <label className="form-label">Subir Imagen</label>
+        <div className="form-group">
+          <label>Subir Imagen:</label>
           <input
             type="file"
             accept="image/*"
@@ -88,57 +80,50 @@ function FormFunsion() {
             onChange={handleImageChange}
             required
           />
-          {preview && (
-            <img
-              src={preview}
-              alt="Previsualización"
-              className="img-preview mt-2"
-              style={{ maxWidth: "200px", height: "auto" }}
-            />
-          )}
+          {preview && <img src={preview} alt="Previsualización" className="img-preview" />}
         </div>
 
-        <div className="form-group mb-3">
-          <label className="form-label">Título de la Película</label>
+        <div className="form-group">
+          <label>Título:</label>
           <input
             type="text"
             name="titulo"
             value={formData.titulo}
             onChange={handleChange}
-            placeholder="Ingrese el título"
+            placeholder="Título de la película"
             className="form-control"
             required
           />
         </div>
 
-        <div className="form-group mb-3">
-          <label className="form-label">Sinopsis</label>
+        <div className="form-group">
+          <label>Sinopsis:</label>
           <textarea
             name="sinopsis"
             value={formData.sinopsis}
             onChange={handleChange}
-            placeholder="Ingrese la sinopsis"
+            placeholder="Sinopsis de la película"
             rows="3"
             className="form-control"
             required
           ></textarea>
         </div>
 
-        <div className="form-group mb-3">
-          <label className="form-label">Idioma</label>
+        <div className="form-group">
+          <label>Idioma:</label>
           <input
             type="text"
             name="idioma"
             value={formData.idioma}
             onChange={handleChange}
-            placeholder="Ingrese el idioma"
+            placeholder="Idioma de la película"
             className="form-control"
             required
           />
         </div>
 
-        <div className="form-group mb-3">
-          <label className="form-label">Fecha de Lanzamiento</label>
+        <div className="form-group">
+          <label>Fecha de Lanzamiento:</label>
           <input
             type="date"
             name="fechaLanzamiento"
@@ -149,24 +134,19 @@ function FormFunsion() {
           />
         </div>
 
-        <div className="form-group mb-3">
-          <label className="form-label me-2">Disponible</label>
+        <div className="form-group form-group-checkbox">
+          <label>Disponible:</label>
           <input
             type="checkbox"
             name="disponible"
             checked={formData.disponible}
             onChange={handleChange}
-            className="form-check-input"
           />
         </div>
 
-        <div className="form-buttons">
-          <button type="submit" className="btn btn-primary">
-            Guardar Película
-          </button>
-        </div>
+        <button type="submit" className="btn-submit">Guardar Película</button>
       </form>
-    </section>
+    </div>
   );
 }
 
