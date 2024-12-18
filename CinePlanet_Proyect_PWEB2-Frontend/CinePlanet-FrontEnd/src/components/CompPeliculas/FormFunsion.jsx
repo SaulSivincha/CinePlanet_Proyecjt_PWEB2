@@ -5,6 +5,9 @@ import axios from 'axios';
 function FormFunsion() {
   const [formData, setFormData] = useState({
     titulo: "",
+    sinopsis: "",
+    idioma: "",
+    disponible: true,
     fechaLanzamiento: "",
     tipoFuncion: "2D",
     imagen: null,
@@ -13,10 +16,10 @@ function FormFunsion() {
   const [preview, setPreview] = useState(null);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: type === "checkbox" ? checked : value,
     });
   };
 
@@ -68,6 +71,32 @@ function FormFunsion() {
         </div>
 
         <div className="form-group mb-3">
+          <label className="form-label">Sinopsis</label>
+          <textarea
+            name="sinopsis"
+            value={formData.sinopsis}
+            onChange={handleChange}
+            placeholder="Ingrese la sinopsis"
+            rows="3"
+            className="form-control"
+            required
+          ></textarea>
+        </div>
+
+        <div className="form-group mb-3">
+          <label className="form-label">Idioma</label>
+          <input
+            type="text"
+            name="idioma"
+            value={formData.idioma}
+            onChange={handleChange}
+            placeholder="Ingrese el idioma"
+            className="form-control"
+            required
+          />
+        </div>
+
+        <div className="form-group mb-3">
           <label className="form-label">Fecha de Lanzamiento</label>
           <input
             type="date"
@@ -79,8 +108,19 @@ function FormFunsion() {
           />
         </div>
 
+        <div className="form-group mb-3">
+          <label className="form-label me-2">Disponible</label>
+          <input
+            type="checkbox"
+            name="disponible"
+            checked={formData.disponible}
+            onChange={handleChange}
+            className="form-check-input"
+          />
+        </div>
+
         <div className="form-buttons">
-          <button type="submit" className="btn">Guardar Película</button>
+          <button type="submit" className="btn btn-primary">Guardar Película</button>
         </div>
       </form>
     </section>
