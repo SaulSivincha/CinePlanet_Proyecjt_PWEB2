@@ -4,9 +4,9 @@ import '../styles/CineForm.css';
 function CineForm({ onCineAdded, onClose }) {
   const [nuevoCine, setNuevoCine] = useState({
     nombre: '',
-    direccion: '',
-    imagen: null,
-    formatos: '',
+    ubicacion: '',
+    tipos_funcion: '',
+    foto_sede: null,
   });
 
   const handleInputChange = (e) => {
@@ -25,9 +25,9 @@ function CineForm({ onCineAdded, onClose }) {
     
     const formData = new FormData();
     formData.append('nombre', nuevoCine.nombre);
-    formData.append('ubicacion', nuevoCine.direccion);
-    formData.append('foto_sede', nuevoCine.imagen); 
-    formData.append('tipos_funcion', nuevoCine.formatos.split(',').map((formato) => formato.trim()));
+    formData.append('ubicacion', nuevoCine.ubicacion);
+    formData.append('foto_sede', nuevoCine.foto_sede); 
+    formData.append('tipos_funcion', nuevoCine.tipos_funcion.split(',').map((tipos_funcion) => tipos_funcion.trim()));
 
     try {
       const response = await fetch('http://localhost:8000/cines/', {
@@ -39,7 +39,7 @@ function CineForm({ onCineAdded, onClose }) {
 
       const data = await response.json();
       onCineAdded(data); 
-      setNuevoCine({ nombre: '', direccion: '', imagen: null, formatos: '' }); 
+      setNuevoCine({ nombre: '', ubicacion: '', foto_sede: null, tipos_funcion: '' }); 
       alert('Cine agregado exitosamente.');
       onClose(); 
     } catch (error) {
@@ -56,36 +56,35 @@ function CineForm({ onCineAdded, onClose }) {
         </button>
         <h2>Agregar Nuevo Cine</h2>
         <form onSubmit={handleSubmit} encType="multipart/form-data">
-          <input
-            type="text"
-            name="nombre"
-            placeholder="Nombre del Cine"
-            value={nuevoCine.nombre}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="text"
-            name="direccion"
-            placeholder="Dirección"
-            value={nuevoCine.direccion}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            type="file"
-            name="imagen"
-            onChange={handleFileChange}
-            required
-          />
-          <input
-            type="text"
-            name="formatos"
-            placeholder="Formatos (separados por coma)"
-            value={nuevoCine.formatos}
-            onChange={handleInputChange}
-            required
-          />
+          <div class="mb-3">
+            <label  for="nombre" class="form-label">Nombre de Cine </label>
+            <input type="text" name="nombre" placeholder="nombre" value={nuevoCine.nombre} onChange={handleInputChange} required ></input>
+          </div>
+          <div class="mb-3">
+            <label for="Ubicacion" class="form-label">Ubicacion </label>
+            <input type="text" name="ubicacion" placeholder="ubicacion" value={nuevoCine.ubicacion} onChange={handleInputChange} required></input>
+          </div>
+          <div class="mb-3">
+            <label for="foto_sede" class="form-label">Imagen </label>
+            <input type="file" name="foto_sede" onChange={handleFileChange} required></input>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="tipos_funcion" className="form-label">Formato</label>
+            <select 
+                name="tipos_funcion" 
+                className="form-select" 
+                aria-label="Seleccionar formato" 
+                value={nuevoCine.tipos_funcion} 
+                onChange={handleInputChange} 
+                required
+            >
+                <option value="" disabled>Elegir Formato</option>
+                <option value="3D">3D</option>
+                <option value="2D">2D</option>
+                <option value="Regular">Regular</option>
+            </select>
+        </div>
+
           <button type="submit">Agregar Cine</button>
         </form>
       </div>
