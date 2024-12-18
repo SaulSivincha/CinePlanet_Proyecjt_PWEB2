@@ -20,9 +20,7 @@ function Carrito() {
 
   return (
     <div>
-      {/* Incluir Compras Dulces con productos de ejemplo */}
       <ComprasDulces productosSeleccionados={productosSeleccionados} />
-      {/* Incluir Compras Funsion con productos de ejemplo */}
       <ComprasFunsion productosSeleccionados={productosSeleccionados} />
     </div>
   );

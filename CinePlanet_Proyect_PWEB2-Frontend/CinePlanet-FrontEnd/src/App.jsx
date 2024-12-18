@@ -10,7 +10,7 @@ import Carrito from './components/Carrito';
 import Socio from './components/Socio';
 import FooterP1 from './components/FooterP1';
 import FooterP2 from './components/FooterP2';
-
+import Admi from './components/Admi.jsx';
 function App() {
     return (
         <Router>
@@ -24,6 +24,7 @@ function App() {
                 <Route path="/homepage" element={<Homepage />} />
                 <Route path="/carrito" element={<Carrito />} />
                 <Route path="/socio" element={<Socio />} />
+                <Route path="/administrador" elemnt={<Admi />} />
             </Routes>
             <FooterP1 />
             <FooterP2 />

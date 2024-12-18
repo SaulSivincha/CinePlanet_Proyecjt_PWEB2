@@ -1,13 +1,15 @@
 .cine-form-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 30%; 
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
+  position: fixed;
+  top: 0;
+  left: 50%; 
+  transform: translateX(-50%);
+  width: 30%; 
+  height: 100%; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
   
   .cine-form-container {
     background: rgb(255, 255, 255);
