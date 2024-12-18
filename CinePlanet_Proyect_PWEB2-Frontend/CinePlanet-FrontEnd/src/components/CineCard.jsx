@@ -8,9 +8,7 @@ function CineCard({ nombre, direccion, imagen, formatos, onConfirm }) {
       <h2>{nombre}</h2>
       <p>{direccion}</p>
       <p className="formatos">{formatos}</p> 
-      <button onClick={onConfirm} className="btn-confirm">
-        Confirmar
-      </button>
+      
     </div>
   );
 }
