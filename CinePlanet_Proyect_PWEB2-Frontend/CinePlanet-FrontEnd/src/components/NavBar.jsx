@@ -6,7 +6,7 @@ function NavBar() {
     const navigate = useNavigate();
 
     return (
-        <nav>  
+        <nav>
             <ul>
                 <li><button onClick={() => navigate('/administrador')}>Administrador</button></li>
                 <li><button onClick={() => navigate('/homepage')}>Cineplanet</button></li>
@@ -15,10 +15,11 @@ function NavBar() {
                 <li><button onClick={() => navigate('/promociones')}>Promociones</button></li>
                 <li><button onClick={() => navigate('/dulceria')}>Dulcería</button></li>
                 <li><button onClick={() => navigate('/carrito')}><i className="bi bi-cart4"></i></button></li>
-                  <li><button onClick={() => navigate('/socio')}><i class="bi bi-person-circle"></i> </button></li>
+                <li><button onClick={() => navigate('/socio')}><i className="bi bi-person-circle"></i></button></li>
             </ul>
         </nav>
     );
 }
 
 export default NavBar;
+

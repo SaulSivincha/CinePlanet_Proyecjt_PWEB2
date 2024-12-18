@@ -1,5 +1,4 @@
-.FormPromociones {
-    position: fixed;
+.FormPromociones{
     top: 0;
     left: 0;
     width: 100%;
@@ -8,8 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-    color: #003366; /* Azul para las letras */
+    color: #003366; /
 }
 
 .FormPromociones form {
