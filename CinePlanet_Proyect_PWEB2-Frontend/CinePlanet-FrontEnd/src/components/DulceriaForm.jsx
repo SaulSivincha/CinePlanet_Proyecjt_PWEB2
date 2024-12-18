@@ -98,4 +98,4 @@ function DulceriaForm({ onSubmit, onEdit }) {
   );
 }
 
-export default DulceriaForm;
+export default DulceriaForm;
