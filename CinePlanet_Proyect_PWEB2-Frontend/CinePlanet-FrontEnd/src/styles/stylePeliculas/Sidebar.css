@@ -1,31 +1,27 @@
-/* Contenedor Principal */
 .filtro-container {
     display: flex;
     align-items: center;
     font-family: Arial, sans-serif;
-    color: #003366; /* Color de texto */
+    color: #003366; 
     font-weight: bold;
-    font-size: 1.2vw; /* Tamaño de texto adaptable */
-    gap: 0.5vw; /* Espacio entre icono y texto */
-    white-space: nowrap; /* Evita saltos de línea */
+    font-size: 1.2vw; 
+    gap: 0.5vw; 
+    white-space: nowrap; 
     margin-top: 6%;
   }
   
-  /* Icono de Filtrar */
   .filtro-icon {
     display: inline-block;
-    font-size: 1.5vw; /* Tamaño del icono */
+    font-size: 1.5vw; 
     color: #003366;
   }
   
-  /* Texto "Filtrar Por:" */
   .filtro-title {
     font-size: 1.2vw;
     color: #003366;
     font-weight: bold;
   }
   
-  /* Responsividad */
   @media (max-width: 768px) {
     .filtro-container {
       font-size: 2.5vw;

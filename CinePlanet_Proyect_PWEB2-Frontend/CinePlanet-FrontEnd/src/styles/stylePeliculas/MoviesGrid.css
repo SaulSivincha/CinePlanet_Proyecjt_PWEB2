@@ -6,7 +6,7 @@
     padding: 1% 3%; 
     box-sizing: border-box;
     border-bottom: 0.3% solid #e0e0e0;
-    border-bottom: 1px solid #B0B0B0; /* Línea inferior color gris plomo */
+    border-bottom: 1px solid #B0B0B0; 
   }
   
   .movies-title {
