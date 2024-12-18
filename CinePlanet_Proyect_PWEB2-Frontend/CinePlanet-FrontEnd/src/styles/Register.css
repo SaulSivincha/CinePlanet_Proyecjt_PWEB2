@@ -23,7 +23,7 @@
   }
   
   .form-group {
-    margin-bottom: 3%; /* Espaciado entre inputs */
+    margin-bottom: 3%; 
   }
   
   .form-label {
@@ -36,7 +36,7 @@
   }
   
   .form-label svg {
-    margin-right: 1%; /* Espacio entre ícono y texto */
+    margin-right: 1%;
     color: #004080;
   }
   
@@ -120,7 +120,6 @@
   
   }
   
-  /* Media Query para pantallas grandes */
   @media (min-width: 1200px) {
     .register-form {
       width: 35%;
