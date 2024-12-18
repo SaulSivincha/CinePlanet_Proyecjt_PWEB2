@@ -32,6 +32,7 @@ function DulceriaForm({ onSubmit, onEdit }) {
   };
 
   return (
+    <div className="DulceriaForm"> 
     <form className="dulceria-form p-4 border rounded shadow" onSubmit={handleSubmit}>
       <h2 className="text-center mb-4">Agregar Producto a la Dulcería</h2>
 
@@ -92,6 +93,7 @@ function DulceriaForm({ onSubmit, onEdit }) {
         </button>
       </div>
     </form>
+    </div>
   );
 }
 
