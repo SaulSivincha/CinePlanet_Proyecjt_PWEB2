@@ -1,42 +1,54 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import '../styles/Promocion.css';
+import React, { useState } from 'react';
+import '../styles/FormPromociones.css';
 
-function Promocion() {
-  const [promociones, setPromociones] = useState([]);
+function FormPromociones() {
+    const [nombre, setNombre] = useState('');
+    const [descripcion, setDescripcion] = useState('');
+    const [archivo, setArchivo] = useState(null);
 
-  useEffect(() => {
-    const fetchPromociones = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/promociones/');
-        setPromociones(response.data);
-      } catch (error) {
-        console.error('Error fetching promociones:', error);
-      }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Aquí manejarías la lógica de envío del formulario, por ejemplo, subiendo datos a un servidor
+        console.log({ nombre, descripcion, archivo });
     };
 
-    fetchPromociones();
-  }, []);
+    const handleFileChange = (event) => {
+        setArchivo(event.target.files[0]);
+    };
 
-  return (
-    <div className="promotion-cards">
-      {promociones.map((promocion) => (
-        <div key={promocion.id} className="promotion-card">
-          <div className="promotion-text">
-            <h1 className="Titulo-promocion">{promocion.titulo}</h1>
-            <p>{promocion.descripcion}</p>
-            <button className="terms-button">Términos y condiciones</button>
-          </div>
-          <div className="Imagen-promocion">
-            <img
-              src={`http://localhost:8000${promocion.imagen}`}
-              alt={promocion.titulo}
-            />
-          </div>
+    return (
+        <div className="FormPromociones">
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="nombre">
+                    Nombre de la promoción:
+                    <input
+                        type="text"
+                        id="nombre"
+                        value={nombre}
+                        onChange={(e) => setNombre(e.target.value)}
+                    />
+                </label>
+                <label htmlFor="descripcion">
+                    Descripción:
+                    <textarea
+                        id="descripcion"
+                        value={descripcion}
+                        onChange={(e) => setDescripcion(e.target.value)}
+                    />
+                </label>
+                <label htmlFor="archivo">
+                    Subir archivo:
+                    <input
+                        type="file"
+                        id="archivo"
+                        onChange={handleFileChange}
+                    />
+                </label>
+                <button type="submit">Enviar</button>
+            </form>
         </div>
-      ))}
-    </div>
-  );
+    );
 }
 
-export default Promocion;
+export default FormPromociones;
+

@@ -1,0 +1,58 @@
+.FormPromociones {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: #003366; /* Azul para las letras */
+}
+
+.FormPromociones form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.FormPromociones h2 {
+    color: #003366; 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.FormPromociones label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.FormPromociones input[type="text"],
+.FormPromociones textarea,
+.FormPromociones input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #003366; 
+}
+
+.FormPromociones button {
+    width: 100%;
+    padding: 10px;
+    background-color: #D70046; 
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px; 
+}
+
