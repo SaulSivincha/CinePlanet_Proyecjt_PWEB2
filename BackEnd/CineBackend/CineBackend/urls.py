@@ -11,6 +11,7 @@ urlpatterns = [
     path('peliculas/', include('peliculas.urls')),
     path('promociones/', include('promociones.urls')),
     path('usuarios/', include('usuarios.urls')),
+    path('carrito/', include('carrito.urls')),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
