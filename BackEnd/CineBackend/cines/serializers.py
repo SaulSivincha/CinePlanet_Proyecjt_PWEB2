@@ -6,10 +6,12 @@ class TipoFuncionSerializer(serializers.ModelSerializer):
         model = TipoFuncion
         fields = ['id', 'nombre']
 
-
 class CineSerializer(serializers.ModelSerializer):
-    tipos_funcion = TipoFuncionSerializer(many=True)
+    tipos_funcion = serializers.PrimaryKeyRelatedField(
+        queryset=TipoFuncion.objects.all(),
+        many=True
+    )
 
     class Meta:
         model = Cine
-        fields = '__all__'
+        fields = ['id', 'nombre', 'ubicacion', 'tipos_funcion', 'foto_sede']

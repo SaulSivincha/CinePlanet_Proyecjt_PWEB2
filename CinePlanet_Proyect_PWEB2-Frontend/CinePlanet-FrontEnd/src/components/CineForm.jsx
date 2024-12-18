@@ -1,13 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../styles/CineForm.css';
 
-function CineForm({ onCineAdded, onClose }) {
+function CineForm({ onCineAdded }) {
   const [nuevoCine, setNuevoCine] = useState({
     nombre: '',
     ubicacion: '',
-    tipos_funcion: '',
+    tipos_funcion: [],
     foto_sede: null,
   });
+
+  const [tiposFuncionDisponibles, setTiposFuncionDisponibles] = useState([]);
+
+  useEffect(() => {
+    const fetchTiposFuncion = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/cines/tipos-funcion/');
+        setTiposFuncionDisponibles(response.data);
+      } catch (error) {
+        console.error('Error al cargar tipos de función:', error);
+      }
+    };
+
+    fetchTiposFuncion();
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -15,79 +31,85 @@ function CineForm({ onCineAdded, onClose }) {
   };
 
   const handleFileChange = (e) => {
-    const { name, files } = e.target;
-    setNuevoCine({ ...nuevoCine, [name]: files[0] });
+    setNuevoCine({ ...nuevoCine, foto_sede: e.target.files[0] });
+  };
+
+  const handleTiposFuncionChange = (e) => {
+    const selectedOptions = Array.from(e.target.selectedOptions, (option) => option.value);
+    setNuevoCine({ ...nuevoCine, tipos_funcion: selectedOptions });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    
     const formData = new FormData();
     formData.append('nombre', nuevoCine.nombre);
     formData.append('ubicacion', nuevoCine.ubicacion);
-    formData.append('foto_sede', nuevoCine.foto_sede); 
-    formData.append('tipos_funcion', nuevoCine.tipos_funcion.split(',').map((tipos_funcion) => tipos_funcion.trim()));
+    formData.append('foto_sede', nuevoCine.foto_sede);
+
+    nuevoCine.tipos_funcion.forEach((tipo) => {
+      formData.append('tipos_funcion', tipo);
+    });
 
     try {
-      const response = await fetch('http://localhost:8000/cines/', {
-        method: 'POST',
-        body: formData, 
-      });
-
-      if (!response.ok) throw new Error('Error al agregar el cine');
-
-      const data = await response.json();
-      onCineAdded(data); 
-      setNuevoCine({ nombre: '', ubicacion: '', foto_sede: null, tipos_funcion: '' }); 
+      const response = await axios.post('http://localhost:8000/cines/', formData);
+      onCineAdded(response.data);
+      setNuevoCine({ nombre: '', ubicacion: '', tipos_funcion: [], foto_sede: null });
       alert('Cine agregado exitosamente.');
-      onClose(); 
     } catch (error) {
-      console.error(error);
-      alert('Hubo un error al agregar el cine. Intenta nuevamente.');
+      console.error('Error al agregar cine:', error);
     }
   };
 
   return (
-    <div className="cine-form-overlay">
-      <div className="cine-form-container">
-        <button className="close-button" onClick={onClose}>
-          ×
-        </button>
-        <h2>Agregar Nuevo Cine</h2>
-        <form onSubmit={handleSubmit} encType="multipart/form-data">
-          <div class="mb-3">
-            <label  for="nombre" class="form-label">Nombre de Cine </label>
-            <input type="text" name="nombre" placeholder="nombre" value={nuevoCine.nombre} onChange={handleInputChange} required ></input>
-          </div>
-          <div class="mb-3">
-            <label for="Ubicacion" class="form-label">Ubicacion </label>
-            <input type="text" name="ubicacion" placeholder="ubicacion" value={nuevoCine.ubicacion} onChange={handleInputChange} required></input>
-          </div>
-          <div class="mb-3">
-            <label for="foto_sede" class="form-label">Imagen </label>
-            <input type="file" name="foto_sede" onChange={handleFileChange} required></input>
-          </div>
-          <div className="mb-3">
-            <label htmlFor="tipos_funcion" className="form-label">Formato</label>
-            <select 
-                name="tipos_funcion" 
-                className="form-select" 
-                aria-label="Seleccionar formato" 
-                value={nuevoCine.tipos_funcion} 
-                onChange={handleInputChange} 
-                required
-            >
-                <option value="" disabled>Elegir Formato</option>
-                <option value="3D">3D</option>
-                <option value="2D">2D</option>
-                <option value="Regular">Regular</option>
-            </select>
+    <div className="cine-form-container">
+      <h2>Agregar Nuevo Cine</h2>
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
+        <div className="mb-3">
+          <label className="form-label">Nombre del Cine</label>
+          <input
+            type="text"
+            name="nombre"
+            value={nuevoCine.nombre}
+            onChange={handleInputChange}
+            required
+          />
         </div>
 
-          <button type="submit">Agregar Cine</button>
-        </form>
-      </div>
+        <div className="mb-3">
+          <label className="form-label">Ubicación</label>
+          <input
+            type="text"
+            name="ubicacion"
+            value={nuevoCine.ubicacion}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Tipos de Función</label>
+          <select
+            multiple
+            name="tipos_funcion"
+            onChange={handleTiposFuncionChange}
+            className="form-select"
+          >
+            {tiposFuncionDisponibles.map((tipo) => (
+              <option key={tipo.id} value={tipo.id}>
+                {tipo.nombre}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Foto de la Sede</label>
+          <input type="file" name="foto_sede" onChange={handleFileChange} required />
+        </div>
+
+        <button type="submit" className="btn-submit">Agregar Cine</button>
+      </form>
     </div>
   );
 }

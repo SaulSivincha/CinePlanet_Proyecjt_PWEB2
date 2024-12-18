@@ -37,6 +37,7 @@ const ListaPeliculas = () => {
               <th>#</th>
               <th>Imagen</th>
               <th>Título</th>
+              <th>Sinopsis</th>
               <th>Lanzamiento</th>
               <th>Acciones</th>
             </tr>
@@ -54,6 +55,7 @@ const ListaPeliculas = () => {
                   />
                 </td>
                 <td>{pelicula.titulo}</td>
+                <td>{pelicula.sinopsis}</td>
                 <td>{pelicula.fecha_lanzamiento}</td>
                 <td>
                   <button

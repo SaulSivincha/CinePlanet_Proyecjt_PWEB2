@@ -1,10 +1,10 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Cine
-from .serializers import CineSerializer
+from .models import Cine, TipoFuncion
+from .serializers import CineSerializer, TipoFuncionSerializer
 
-class ListaCine(APIView):
+class ListaCines(APIView):
     def get(self, request):
         cines = Cine.objects.all()
         serializer = CineSerializer(cines, many=True)
@@ -17,6 +17,12 @@ class ListaCine(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class ListaTiposFuncion(APIView):
+    def get(self, request):
+        tipos_funcion = TipoFuncion.objects.all()
+        serializer = TipoFuncionSerializer(tipos_funcion, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
 class VistaCine(APIView):
     def get(self, request, id):
         try:
@@ -32,7 +38,7 @@ class VistaCine(APIView):
         except Cine.DoesNotExist:
             return Response({"error": "Cine no encontrado"}, status=status.HTTP_404_NOT_FOUND)
 
-        serializer = CineSerializer(cine, data=request.data)
+        serializer = CineSerializer(cine, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
