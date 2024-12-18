@@ -2,11 +2,11 @@
 
 **  
 
-![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.001.png)**UNIVERSIDAD NACIONAL DE SAN AGUSTÍN DE AREQUIPA**
+![](Imagenes2.0/Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.001.png)**UNIVERSIDAD NACIONAL DE SAN AGUSTÍN DE AREQUIPA**
 
 FACULTAD DE INGENIERÍA DE PRODUCCIÓN Y SERVICIOS
 
-ESCUELA PROFESIONAL DE INGENIERÍA DE SISTEMAS![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.002.png)
+ESCUELA PROFESIONAL DE INGENIERÍA DE SISTEMAS![](Imagenes2.0/Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.002.png)
 **
 
 
@@ -35,7 +35,9 @@ ESCUELA PROFESIONAL DE INGENIERÍA DE SISTEMAS![](Imagen/Aspose.Words.4e84f6f9-5
 **Arequipa - Perú**
 
 **2024**
-### <a name="_kmozs4bzymz7"></a>                   **Informe de la Página Web - UnsaPlanet**
+### <a name="_kmozs4bzymz7"></a>                   **LINK DEL GITHUB :** 
+### <a name="_x5ovraam5iv1"></a><https://github.com/SaulSivincha/CinePlanet_Proyect_PWEB2>
+### <a name="_vd7964bulli9"></a>**Informe de la Página Web - UnsaPlanet**
 1. ### <a name="_xghmzpad994p"></a>**Resumen del Proyecto**
 El presente informe detalla el desarrollo de una **página web de cine**, inspirada en CinePlanet, cuyo objetivo fue ofrecer una plataforma donde los usuarios puedan consultar películas, conocer horarios, acceder a promociones y explorar productos de la dulcería.
 
@@ -105,19 +107,19 @@ El proyecto, aunque no cumplió totalmente con nuestras expectativas, representa
 ### <a name="_iam67quzgrjt"></a>**Componentes del Frontend**
 La carpeta src/components incluye archivos .jsx y sus respectivos archivos de estilos .css que comparten el mismo nombre:
 
-![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.003.png)![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.004.png)
+![](Imagenes2.0/Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.003.png)![](Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.004.png)
 
-![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.005.png)
+![](Imagenes2.0/Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.005.png)
 
-![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.006.png)
+![](Imagenes2.0/Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.006.png)
 
-![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.007.png)
+![](Imagenes2.0/Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.007.png)
 
-![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.008.png)
+![](Imagenes2.0/Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.008.png)
 ### <a name="_f2kxiwed9ezi"></a>**Backend - CineBackend**
 La estructura del **Backend** está organizada con directorios y archivos funcionales:
 
-![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.009.png)
+![](Imagenes2.0/Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.009.png)
 
 - El **Frontend** está construido con **React**, implementando componentes reutilizables y modulares. Cada componente cuenta con un archivo **.css** correspondiente que define su estilo visual, asegurando un diseño limpio y organizado.
 - El **Backend** utiliza un framework como **Django**, organizando la lógica del servidor y almacenamiento de datos en módulos independientes (carrito, cines, dulcería, etc.).
@@ -155,35 +157,35 @@ La estructura del **Backend** está organizada con directorios y archivos funcio
 - Ruta: /homepage
 - Muestra la página principal de la aplicación con un carrusel interactivo de películas destacadas, accesos directos a otras secciones y el diseño inicial.
 
-  ![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.010.png)
+  ![](Imagenes2.0/Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.010.png)
 
 **Página de Cines**
 
 - Ruta: /cines
 - Presenta una lista de los cines disponibles, con detalles como ubicación, horarios y acceso a la cartelera.
 
-![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.011.png)
+![](Imagenes2.0/Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.011.png)
 
 **Página de Películas**
 
 - Ruta: /peliculas
 - Muestra todas las películas disponibles, con sus respectivos posters, sinopsis y opciones de horarios.
 
-  ![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.012.png)
+  ![](Imagenes2.0/Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.012.png)
 
 **Página de Promociones**
 
 - Ruta: /promociones
 - Exhibe las promociones activas, con detalles de las ofertas y cómo acceder a ellas.
 
-  ![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.013.png)
+  ![](Imagenes2.0/Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.013.png)
 
 **Página de Dulcería**
 
 - Ruta: /dulceria
 - Muestra los productos disponibles en la dulcería, como snacks y bebidas, que los usuarios pueden agregar al carrito.
 
-  ![](Imagen/Aspose.Words.4e84f6f9-5a2d-4c40-bd1d-2796d83d5c72.014.png)
+  ![](Imagenes2.0/Aspose.Words.c993aa24-afd4-4ffb-991f-25ccd6ebc610.014.png)
 
 **V.     Conclusión** 
 
@@ -193,5 +195,27 @@ Sin embargo, aunque el sistema está funcional, aún existen áreas que requiere
 
 El equipo ha trabajado de manera eficiente y colaborativa durante el desarrollo, logrando un prototipo sólido que sienta las bases para futuras mejoras y funcionalidades adicionales. Este proyecto representa un avance significativo y una base sólida para su evolución y entrega final.
 
+**VI.    EVALUACIÓN INTERNA**
 
+|INTEGRANTES|Roydan |Antony |Aarón|DanieL|Saúl|Diego|
+| :- | :- | :- | :- | :- | :- | :- |
+|Apaza Anahua Roydan ||19|20|18|20|16|
+|Condori Caira Antony Beltran|17||20|19|20|17|
+|Quiñonez Delgado Aarón Fernando|17|18||20|20|15|
+|Sencia Ale Bryan Daniel|17|18|19||18|15|
+|Sivincha Machaca Saúl Andre|17|18|20|18||15|
+|Yauli Merma Diego Raul|17|18|20|18|18||
 
+Nota final : 
+
+`  `-Apaza Anahua Roydan Artemio                           17
+
+`  `-Condori Caira Antony Beltran                             18.2
+
+`  `-Quiñonez Delgado Aarón Fernando                     20    
+
+`  `-Sencia Ale Bryan Daniel                                      18.6
+
+`  `-Sivincha Machaca Saúl Andre                             19.2
+
+`  `-Yauli Merma Diego Raul                                     15.6
