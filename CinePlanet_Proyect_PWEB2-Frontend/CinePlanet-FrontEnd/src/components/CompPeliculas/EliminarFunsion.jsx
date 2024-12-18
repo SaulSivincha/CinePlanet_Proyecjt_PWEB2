@@ -1,34 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../../styles/stylePeliculas/EliminarFunsion.css/";
 
 const ListaPeliculas = () => {
-  const datosEjemplo = [
-    {
-      id: 1,
-      imagenUrl: "https://via.placeholder.com/100", 
-      titulo: "El Padrino",
-      fechaLanzamiento: "1972-03-24",
-    },
-    {
-      id: 2,
-      imagenUrl: "https://via.placeholder.com/100",
-      titulo: "Interestelar",
-      fechaLanzamiento: "2014-11-07",
-    },
-    {
-      id: 3,
-      imagenUrl: "https://via.placeholder.com/100",
-      titulo: "Inception",
-      fechaLanzamiento: "2010-07-16",
-    },
-  ];
+  const [peliculas, setPeliculas] = useState([]);
 
-  const [peliculas, setPeliculas] = useState(datosEjemplo);
-
-  const handleDelete = (id) => {
-    const nuevasPeliculas = peliculas.filter((pelicula) => pelicula.id !== id);
-    setPeliculas(nuevasPeliculas);
+  const fetchPeliculas = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/peliculas/");
+      setPeliculas(response.data);
+    } catch (error) {
+      console.error("Error al obtener las películas:", error);
+    }
   };
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8000/peliculas/${id}/`);
+      setPeliculas((prevPeliculas) => prevPeliculas.filter((p) => p.id !== id));
+    } catch (error) {
+      console.error("Error al eliminar la película:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchPeliculas();
+  }, []);
 
   return (
     <section className="peliculas-eliminar-container mt-4">
@@ -50,14 +47,14 @@ const ListaPeliculas = () => {
                 <td>{index + 1}</td>
                 <td>
                   <img
-                    src={pelicula.imagenUrl}
+                    src={`http://localhost:8000${pelicula.poster}`}
                     alt={pelicula.titulo}
                     className="pelicula-imagen"
                     width="100"
                   />
                 </td>
                 <td>{pelicula.titulo}</td>
-                <td>{pelicula.fechaLanzamiento}</td>
+                <td>{pelicula.fecha_lanzamiento}</td>
                 <td>
                   <button
                     className="pelicula-btn-eliminar"
@@ -70,6 +67,9 @@ const ListaPeliculas = () => {
             ))}
           </tbody>
         </table>
+        {peliculas.length === 0 && (
+          <p className="text-center">No hay películas disponibles.</p>
+        )}
       </div>
     </section>
   );
