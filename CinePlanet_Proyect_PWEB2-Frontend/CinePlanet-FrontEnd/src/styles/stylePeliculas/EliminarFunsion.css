@@ -5,7 +5,7 @@
     box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
     border-radius: 1vw;
     margin: 0 auto;
-    max-width: 95%; /* Ancho máximo */
+    max-width: 95%; 
   }
   
   .peliculas-eliminar-title {
@@ -18,16 +18,14 @@
     letter-spacing: 0.1vw;
   }
   
-  /* Tabla Responsiva */
   .peliculas-eliminar-table-responsive {
-    overflow-x: auto; /* Cinta de desplazamiento */
+    overflow-x: auto; 
     -webkit-overflow-scrolling: touch;
     border: 0.3vh solid #ddd;
     border-radius: 0.5vw;
     box-shadow: 0 0.3vw 0.6vw rgba(0, 0, 0, 0.1);
   }
   
-  /* Tabla */
   .peliculas-eliminar-table {
     width: 100%;
     border-collapse: collapse;
@@ -41,24 +39,21 @@
     border-bottom: 0.1vh solid #ddd;
     font-size: 1.2vw;
     color: #333;
-    white-space: nowrap; /* Evita el salto de línea */
+    white-space: nowrap;
   }
   
-  /* Encabezados de la tabla */
   .peliculas-eliminar-table th {
     background-color: #003366;
     color: #ffffff;
     font-weight: bold;
   }
   
-  /* Reducción específica para la columna "Fecha de Lanzamiento" */
   .peliculas-eliminar-table th:nth-child(4),
   .peliculas-eliminar-table td:nth-child(4) {
-    width: 15%; /* Reduce el tamaño de la columna */
+    width: 15%; 
     min-width: 10vw;
   }
   
-  /* Filas alternas */
   .peliculas-eliminar-table tr:nth-child(even) {
     background-color: #f4f4f4;
   }
@@ -68,15 +63,13 @@
     cursor: pointer;
   }
   
-  /* Imagen más grande */
   .pelicula-imagen {
-    max-width: 12vw; /* Aumenta el tamaño de la imagen */
+    max-width: 12vw; 
     height: auto;
     border: 0.3vh solid #ddd;
     border-radius: 0.5vw;
   }
   
-  /* Botones con Espaciado Horizontal */
   .pelicula-btn-eliminar{
     border: none;
     padding: 0.7vh 1.5vw;
@@ -88,7 +81,7 @@
   }
   
   .pelicula-btn-eliminar {
-    background-color: #e5004e; /* Rojo */
+    background-color: #e5004e; 
   }
   
   .pelicula-btn-eliminar:hover {
@@ -96,7 +89,6 @@
     transform: scale(1.05);
   }
 
-  /* Responsividad */
   @media (max-width: 768px) {
     .peliculas-eliminar-title {
       font-size: 4vw;
@@ -109,7 +101,7 @@
     }
   
     .pelicula-imagen {
-      max-width: 18vw; /* Imagen más grande en pantallas medianas */
+      max-width: 18vw; 
     }
 
     .pelicula-btn-eliminar{
@@ -129,7 +121,7 @@
     }
   
     .pelicula-imagen {
-      max-width: 20vw; /* Imagen más grande en pantallas pequeñas */
+      max-width: 20vw; 
     }
 
     .pelicula-btn-eliminar{

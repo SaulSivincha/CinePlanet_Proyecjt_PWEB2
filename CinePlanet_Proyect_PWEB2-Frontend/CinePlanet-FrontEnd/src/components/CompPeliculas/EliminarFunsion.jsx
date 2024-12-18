@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import "../../styles/stylePeliculas/EliminarFunsion.css/";
 
 const ListaPeliculas = () => {
-  // Datos simulados
   const datosEjemplo = [
     {
       id: 1,
-      imagenUrl: "https://via.placeholder.com/100", // Imagen de ejemplo
+      imagenUrl: "https://via.placeholder.com/100", 
       titulo: "El Padrino",
       fechaLanzamiento: "1972-03-24",
     },
