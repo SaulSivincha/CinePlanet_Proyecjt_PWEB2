@@ -28,7 +28,7 @@ function CinePage() {
   }, []);
 
   const handleCineAdded = (nuevoCine) => {
-    
+   
     setCines((prevCines) => [...prevCines, nuevoCine]);
   };
 
@@ -44,20 +44,8 @@ function CinePage() {
     <div className="Caja-pagina">
       <div className="cajatitle">
         <h1 className="title">Cines</h1>
-        <button
-          className="agregar-cine-button"
-          onClick={() => setMostrarFormulario(true)}
-        >
-          Agregar Nuevo Cine
-        </button>
+        
       </div>
-
-      {mostrarFormulario && (
-        <CineForm
-          onCineAdded={handleCineAdded}
-          onClose={() => setMostrarFormulario(false)}
-        />
-      )}
 
       <div className="cine-grid">
         {cines.map((cine) => (

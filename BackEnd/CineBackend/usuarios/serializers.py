@@ -31,4 +31,5 @@ class CustomTokenSerializer(serializers.Serializer):
             'refresh': str(refresh),
             'nombres': usuario.nombres,
             'apellidos': usuario.apellidos,
+            'esAdmin': usuario.es_admin,
         }
