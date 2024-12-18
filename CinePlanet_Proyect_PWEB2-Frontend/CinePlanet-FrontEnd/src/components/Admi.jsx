@@ -4,6 +4,7 @@ import FormPromociones from './FormPromociones';
 import CineForm from './CineForm';
 import FormFunsion from './CompPeliculas/FormFunsion';
 import EliminarFunsion from './CompPeliculas/EliminarFunsion';
+import DulceriaForm from './DulceriaForm';
 
 function Admi() {
   const [active, setActive] = useState('Cineplanet');
@@ -12,7 +13,8 @@ function Admi() {
     <div>  
      <FormPromociones />
      <FormFunsion/>
-     <EliminarFunsion/> 
+     <EliminarFunsion/>
+     <DulceriaForm /> 
      <CineForm />
     </div>
     );
