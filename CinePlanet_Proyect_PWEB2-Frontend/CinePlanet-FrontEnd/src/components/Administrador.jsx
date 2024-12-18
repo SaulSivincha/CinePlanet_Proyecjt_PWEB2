@@ -2,6 +2,7 @@ import FormPromociones from './FormPromociones';
 import FormFunsion from './CompPeliculas/FormFunsion';
 import EliminarFunsion from './CompPeliculas/EliminarFunsion';
 import DulceriaForm from './DulceriaForm';
+import CineForm from './CineForm';
 import React, { useState } from 'react';
 import '../styles/Admi.css';
 
@@ -23,8 +24,7 @@ function Administrador() {
                 </ul>
             </div>
             <div>
-                {activeSection === 'Cine' && <FormFunsion />}
-                {activeSection === 'Cine' && <EliminarFunsion />}
+                {activeSection === 'Cine' && <CineForm />}
                 {activeSection === 'Peliculas' && <FormFunsion />}
                 {activeSection === 'Peliculas' && <EliminarFunsion />}
                 {activeSection === 'Promociones' && <FormPromociones />}
