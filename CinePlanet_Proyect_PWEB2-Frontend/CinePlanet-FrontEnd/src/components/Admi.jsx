@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import '../styles/Admi.css';
-
-function Admin() {
+import FormPromociones from './FormPromociones';
+function Admi() {
   const [active, setActive] = useState('Cineplanet');
 
   return (
-  <>
-  </>
-  );
-}
+    <div>  
+     <FormPromociones /> 
+    </div>
+    );
+};
 
-export default Admin;
+export default Admi;

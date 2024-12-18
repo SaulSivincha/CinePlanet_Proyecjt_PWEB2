@@ -8,7 +8,7 @@ function NavBar() {
     return (
         <nav>  
             <ul>
-                <li><button onclick={() => navigate('/administrador')}>Administrador</button></li>
+                <li><button onClick={() => navigate('/administrador')}>Administrador</button></li>
                 <li><button onClick={() => navigate('/homepage')}>Cineplanet</button></li>
                 <li><button onClick={() => navigate('/cines')}>Cines</button></li>
                 <li><button onClick={() => navigate('/peliculas')}>Películas</button></li>
