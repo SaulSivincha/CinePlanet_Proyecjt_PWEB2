@@ -1,0 +1,122 @@
+.promociones-eliminar-container {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 2% 4%;
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+    border-radius: 1vw;
+    margin: 0 auto;
+    max-width: 95%;
+  }
+  
+  .promociones-eliminar-title {
+    font-size: 2.5vw;
+    text-align: center;
+    color: #003366;
+    font-weight: bold;
+    margin-bottom: 2vh;
+    text-transform: uppercase;
+    letter-spacing: 0.1vw;
+  }
+  
+  .promociones-eliminar-table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 0.3vh solid #ddd;
+    border-radius: 0.5vw;
+    box-shadow: 0 0.3vw 0.6vw rgba(0, 0, 0, 0.1);
+  }
+  
+  .promociones-eliminar-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+  }
+  
+  .promociones-eliminar-table th,
+  .promociones-eliminar-table td {
+    text-align: center;
+    padding: 1.5vh 1vw;
+    border-bottom: 0.1vh solid #ddd;
+    font-size: 1.2vw;
+    color: #333;
+    white-space: nowrap;
+  }
+  
+  .promociones-eliminar-table th {
+    background-color: #003366;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .promociones-eliminar-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+  }
+  
+  .promociones-eliminar-table tr:hover {
+    background-color: #e0f7fa;
+    cursor: pointer;
+  }
+  
+  .promocion-imagen {
+    max-width: 12vw;
+    height: auto;
+    border: 0.3vh solid #ddd;
+    border-radius: 0.5vw;
+  }
+  
+  .promocion-btn-eliminar {
+    border: none;
+    padding: 0.7vh 1.5vw;
+    font-size: 1.2vw;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    color: #fff;
+    transition: transform 0.2s ease-in-out;
+    background-color: #e5004e;
+  }
+  
+  .promocion-btn-eliminar:hover {
+    background-color: #c4003c;
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .promociones-eliminar-title {
+      font-size: 4vw;
+    }
+  
+    .promociones-eliminar-table th,
+    .promociones-eliminar-table td {
+      font-size: 2.5vw;
+      padding: 1vh 2vw;
+    }
+  
+    .promocion-imagen {
+      max-width: 18vw;
+    }
+  
+    .promocion-btn-eliminar {
+      font-size: 2.5vw;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .promociones-eliminar-title {
+      font-size: 5vw;
+    }
+  
+    .promociones-eliminar-table th,
+    .promociones-eliminar-table td {
+      font-size: 3vw;
+      padding: 1vh 3vw;
+    }
+  
+    .promocion-imagen {
+      max-width: 20vw;
+    }
+  
+    .promocion-btn-eliminar {
+      font-size: 2.5vw;
+    }
+  }
+  
