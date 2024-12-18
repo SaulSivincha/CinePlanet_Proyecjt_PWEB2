@@ -62,7 +62,7 @@ const EliminarDulceria = () => {
                 </td>
                 <td>{producto.titulo}</td>
                 <td>{producto.descripcion}</td>
-                <td>S/ {producto.precio.toFixed(2)}</td>
+                <td>S/ {producto.precio ? Number(producto.precio).toFixed(2) : "0.00"}</td>
                 <td>
                   <button
                     className="dulceria-btn-eliminar"
