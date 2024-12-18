@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DulceriaForm.css';
+import '../styles/DulceriaForm.css';
 
 function DulceriaForm({ onSubmit, onEdit }) {
   const [imagen, setImagen] = useState('');

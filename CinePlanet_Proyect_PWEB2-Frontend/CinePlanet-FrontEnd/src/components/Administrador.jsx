@@ -2,6 +2,7 @@ import Register from './Register';
 import FormPromociones from './FormPromociones';
 import FormFunsion from './CompPeliculas/FormFunsion';
 import EliminarFunsion from './CompPeliculas/EliminarFunsion';
+import DulceriaForm from './DulceriaForm';
 
 function Administrador() {
     return (
@@ -10,6 +11,7 @@ function Administrador() {
             <FormPromociones />
             <FormFunsion/>
             <EliminarFunsion/>
+            <DulceriaForm />
         </div>
     );
 }
