@@ -1,7 +1,11 @@
+.main-container {
+    padding-top: 50px; /* Espacio desde el inicio de la página */
+}
+
 .nav-container {
     background-color: #FFFFFF;
     position: sticky;
-    top: 0;
+    top: 50px; /* Posición inicial más abajo */
     left: 0;
     width: 100%;
     padding: 10px;
@@ -9,7 +13,7 @@
     z-index: 99999;
 }
 
-nav ul {
+ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -18,24 +22,22 @@ nav ul {
     align-items: center;
 }
 
-nav li {
-    text-decoration: none;
+li {
     color: #0E2041;
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
     background: none;
-    border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-nav li:hover {
+li:hover {
     background-color: #e0e0e0;
     border-bottom: 4px solid #E50246;
 }
 
-nav li.active {
+li.active {
     background-color: #007bff;
     color: #fff;
 }
