@@ -1,0 +1,122 @@
+  .dulceria-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 60%;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.dulceria-form h2 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.dulceria-form label {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.dulceria-form input,
+.dulceria-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.dulceria-form textarea {
+  resize: none;
+  min-height: 6rem;
+}
+
+.dulceria-form input:focus,
+.dulceria-form textarea:focus {
+  border-color: #004080;
+  outline: none;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.dulceria-form button {
+  flex: 1;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.dulceria-form button[type="submit"] {
+  background-color: #e0004d;
+  color: #fff;
+}
+
+.dulceria-form button[type="submit"]:hover {
+  background-color: #c0003c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dulceria-form button:active {
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+.dulceria-form .edit-button {
+  background-color: #004080;
+  color: #fff;
+}
+
+.dulceria-form .edit-button:hover {
+  background-color: #003060;
+}
+
+@media (max-width: 768px) {
+  .dulceria-form {
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+.dulceria-form .edit-button {
+  background-color: #007bff; 
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s ease;
+}
+
+.dulceria-form .edit-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.dulceria-form .edit-button:active {
+  transform: scale(0.98); 
+  box-shadow: none;
+}
+
+.dulceria-form .edit-button:focus {
+  outline: none; 
+}
