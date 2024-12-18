@@ -1,9 +1,9 @@
-.section-content {
+.custom-section-content {
   margin-top: 2%;  
   margin-bottom: 2%; 
 }
 
-.section-content ul li {
+.custom-section-content .footer-item {
   margin-bottom: 1.5%; 
   line-height: 300%; 
   letter-spacing: 0.05em; 
@@ -50,7 +50,7 @@
   display: inline-flex;
   align-items: center;
   padding: 1% 2%; 
-  font-size: 0.9rem; 
+  font-size: 0.5rem; 
 }
 
 .footer-container .btn-outline-light:hover {
@@ -67,32 +67,31 @@
   margin-right: auto;
 }
 
-.footer-container ul li a {
+.footer-container .footer-item a {
   color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
   letter-spacing: 0.05em; 
 }
 
-.footer-container ul li a:hover {
+.footer-container .footer-item a:hover {
   color: #e63946;
 }
 
-.footer-container ul li a.text-light.text-decoration-none {
+.footer-container .footer-item a.text-light.text-decoration-none {
   margin-top: 1.5%; 
   margin-bottom: 1.5%;
   display: block;
   letter-spacing: 0.05em; 
 }
 
-.section-content h5 {
+.custom-section-content h5 {
   font-size: 1.5rem; 
   margin-bottom: 1.5%;  
   line-height: 5; 
   letter-spacing: 0.05em; 
 }
 
-.section-content ul {
+.custom-section-content ul {
   padding-left: 2%;
-   
 }
