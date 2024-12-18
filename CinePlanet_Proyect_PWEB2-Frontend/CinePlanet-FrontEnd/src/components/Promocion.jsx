@@ -29,8 +29,8 @@ function Promocion() {
           </div>
           <div className="Imagen-promocion">
             <img
-              src={'http://localhost:8000${promocion.imagen}'}
-              alt={promocion.titulo}
+              src={`http://localhost:8000${promocion.imagen}`}
+              alt={promocion.imagen}
             />
           </div>
         </div>
