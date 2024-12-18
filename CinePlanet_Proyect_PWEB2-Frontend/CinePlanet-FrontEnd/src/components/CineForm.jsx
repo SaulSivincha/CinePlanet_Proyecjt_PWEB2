@@ -38,7 +38,7 @@ function CineForm({ onCineAdded }) {
     const selectedOptions = Array.from(e.target.selectedOptions, (option) => option.value);
     setNuevoCine({ ...nuevoCine, tipos_funcion: selectedOptions });
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -53,14 +53,13 @@ function CineForm({ onCineAdded }) {
 
     try {
       const response = await axios.post('http://localhost:8000/cines/', formData);
-      onCineAdded(response.data);
       setNuevoCine({ nombre: '', ubicacion: '', tipos_funcion: [], foto_sede: null });
       alert('Cine agregado exitosamente.');
     } catch (error) {
       console.error('Error al agregar cine:', error);
-      alert('Hubo un error al agregar el cine. Intenta nuevamente.');
     }
   };
+
 
   return (
     <div className="cine-form-container">

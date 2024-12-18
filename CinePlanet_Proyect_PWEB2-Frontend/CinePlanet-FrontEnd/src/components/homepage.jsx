@@ -7,7 +7,7 @@ import CarruselPeliculas from './CarruselPeliculas.jsx';
 function Homepage() {
     return (
       <div >
-            <CarruselPeliculas/>
+            <Carousel/>
         </div>
       
     );

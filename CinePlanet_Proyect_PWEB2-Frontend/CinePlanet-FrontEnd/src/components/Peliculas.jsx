@@ -2,12 +2,8 @@ import NavBar from './NavBar.jsx';
 import Sidebar from './CompPeliculas/Sidebar.jsx';
 import MoviesGrid from './CompPeliculas/MoviesGrid.jsx';
 import Funsion from './CompPeliculas/Funsion.jsx';
-import FormFunsion from './CompPeliculas/FormFunsion.jsx';
-import EliminarFunsion from './CompPeliculas/EliminarFunsion.jsx';
-import  Device  from '../devices/Device.jsx';
 
 function Peliculas() {
-    const esAdmin = localStorage.getItem('esAdmin') === 'true';
     return(
         <div> 
 
@@ -32,22 +28,6 @@ function Peliculas() {
                                 <Funsion />
                             </div>
                         </div>
-
-                        {esAdmin && (
-                        <div className="row">
-                            <div className="col-12">
-                            <FormFunsion />
-                            </div>
-                        </div>
-                        )}
-
-                        {esAdmin && (
-                        <div className="row">
-                            <div className="col-12">
-                            <EliminarFunsion />
-                            </div>
-                        </div>
-                        )}
 
                     </div>
 

@@ -1,40 +1,50 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../styles/DulceriaForm.css';
 
-function DulceriaForm({ onSubmit, onEdit }) {
-  const [imagen, setImagen] = useState('');
+function DulceriaForm() {
+  const [imagen, setImagen] = useState(null);
   const [titulo, setTitulo] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [precio, setPrecio] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const dulceriaItem = { imagen, titulo, descripcion, precio };
-    onSubmit(dulceriaItem);
-    setImagen('');
-    setTitulo('');
-    setDescripcion('');
-    setPrecio('');
+
+    const formData = new FormData();
+    formData.append('imagen', imagen);
+    formData.append('titulo', titulo);
+    formData.append('descripcion', descripcion);
+    formData.append('precio', precio);
+
+    try {
+      const response = await axios.post('http://localhost:8000/dulceria/', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      console.log('Producto agregado:', response.data);
+
+      setImagen(null);
+      setTitulo('');
+      setDescripcion('');
+      setPrecio('');
+      alert('Producto agregado exitosamente.');
+    } catch (error) {
+      console.error('Error al agregar el producto:', error.response || error.message);
+      alert('Error al agregar el producto. Inténtalo de nuevo.');
+    }
   };
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => setImagen(reader.result);
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleEdit = () => {
-    const dulceriaItem = { imagen, titulo, descripcion, precio };
-    onEdit && onEdit(dulceriaItem);
+    setImagen(file);
   };
 
   return (
     <div className="dulceria-form-container">
       <h2 className="dulceria-form-title">Agregar Producto a la Dulcería</h2>
-      <form onSubmit={handleSubmit} className="dulceria-form shadow-sm">
+      <form onSubmit={handleSubmit} className="dulceria-form shadow-sm" encType="multipart/form-data">
         <div className="mb-3">
           <label htmlFor="imagen" className="form-label">Imagen:</label>
           <input
@@ -91,11 +101,10 @@ function DulceriaForm({ onSubmit, onEdit }) {
 
         <div className="dulceria-form-buttons">
           <button type="submit" className="btn-submit">Agregar Producto</button>
-          <button type="button" className="btn-edit" onClick={handleEdit}>Editar Producto</button>
         </div>
       </form>
     </div>
   );
 }
 
-export default DulceriaForm;
+export default DulceriaForm;
