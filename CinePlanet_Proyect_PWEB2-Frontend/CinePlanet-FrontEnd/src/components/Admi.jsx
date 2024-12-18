@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './NavbarAdmin.css';
+import '../styles/Admi.css';
 
 function Admin() {
   const [active, setActive] = useState('Cineplanet');
