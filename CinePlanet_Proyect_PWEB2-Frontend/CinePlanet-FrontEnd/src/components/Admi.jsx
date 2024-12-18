@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import '../styles/Admi.css';
 import FormPromociones from './FormPromociones';
 import CineForm from './CineForm';
-import FormFunsion from './CompPeliculas/FormFunsion';
-import EliminarFunsion from './CompPeliculas/EliminarFunsion';
 import DulceriaForm from './DulceriaForm';
 
 function Admi() {
@@ -12,8 +10,6 @@ function Admi() {
   return (
     <div>  
      <FormPromociones />
-     <FormFunsion/>
-     <EliminarFunsion/>
      <DulceriaForm /> 
      <CineForm />
     </div>
