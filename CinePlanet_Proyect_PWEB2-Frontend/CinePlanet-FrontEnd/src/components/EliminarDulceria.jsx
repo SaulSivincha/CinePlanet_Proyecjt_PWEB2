@@ -57,13 +57,11 @@ const EliminarDulceria = () => {
                     src={`http://localhost:8000${producto.imagen}`}
                     alt={producto.titulo}
                     className="dulceria-imagen"
-                    width="100"
                   />
                 </td>
-                <td>{producto.titulo}</td>
-                <td>{producto.descripcion}</td>
+                <td className="text-wrap">{producto.titulo}</td>
+                <td className="text-wrap">{producto.descripcion}</td>
                 <td>S/ {producto.precio ? Number(producto.precio).toFixed(2) : "0.00"}</td>
-
                 <td>
                   <button
                     className="dulceria-btn-eliminar"

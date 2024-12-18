@@ -1,122 +1,129 @@
+
 .dulceria-eliminar-container {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    padding: 2% 4%;
-    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
-    border-radius: 1vw;
-    margin: 0 auto;
-    max-width: 95%;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  padding: 2% 4%;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+  border-radius: 1vw;
+  margin: 0 auto;
+  max-width: 95%;
+}
+
+.dulceria-eliminar-title {
+  font-size: 2.5vw;
+  text-align: center;
+  color: #003366;
+  font-weight: bold;
+  margin-bottom: 2vh;
+  text-transform: uppercase;
+  letter-spacing: 0.1vw;
+}
+
+.dulceria-eliminar-table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 0.3vh solid #ddd;
+  border-radius: 0.5vw;
+  box-shadow: 0 0.3vw 0.6vw rgba(0, 0, 0, 0.1);
+}
+
+.dulceria-eliminar-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+.dulceria-eliminar-table th,
+.dulceria-eliminar-table td {
+  text-align: center;
+  padding: 1.5vh 1vw;
+  border-bottom: 0.1vh solid #ddd;
+  font-size: 1.2vw;
+  color: #333;
+  word-wrap: break-word; 
+  white-space: normal; 
+}
+
+.dulceria-eliminar-table th {
+  background-color: #003366;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.dulceria-eliminar-table tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+.dulceria-eliminar-table tr:hover {
+  background-color: #e0f7fa;
+  cursor: pointer;
+}
+
+.dulceria-imagen {
+  max-width: 12vw;
+  height: auto;
+  border: 0.3vh solid #ddd;
+  border-radius: 0.5vw;
+}
+
+.dulceria-btn-eliminar {
+  border: none;
+  padding: 0.7vh 1.5vw;
+  font-size: 1.2vw;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+  background-color: #e5004e;
+}
+
+.dulceria-btn-eliminar:hover {
+  background-color: #c4003c;
+  transform: scale(1.05);
+}
+
+.text-center {
+  font-size: 1.5vw;
+  color: #777;
+  margin-top: 2vh;
+}
+
+@media (max-width: 768px) {
   .dulceria-eliminar-title {
-    font-size: 2.5vw;
-    text-align: center;
-    color: #003366;
-    font-weight: bold;
-    margin-bottom: 2vh;
-    text-transform: uppercase;
-    letter-spacing: 0.1vw;
+      font-size: 4vw;
   }
-  
-  .dulceria-eliminar-table-responsive {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border: 0.3vh solid #ddd;
-    border-radius: 0.5vw;
-    box-shadow: 0 0.3vw 0.6vw rgba(0, 0, 0, 0.1);
-  }
-  
-  .dulceria-eliminar-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #ffffff;
-  }
-  
+
   .dulceria-eliminar-table th,
   .dulceria-eliminar-table td {
-    text-align: center;
-    padding: 1.5vh 1vw;
-    border-bottom: 0.1vh solid #ddd;
-    font-size: 1.2vw;
-    color: #333;
-    white-space: nowrap;
-  }
-  
-  .dulceria-eliminar-table th {
-    background-color: #003366;
-    color: #ffffff;
-    font-weight: bold;
-  }
-  
-  .dulceria-eliminar-table tr:nth-child(even) {
-    background-color: #f4f4f4;
-  }
-  
-  .dulceria-eliminar-table tr:hover {
-    background-color: #e0f7fa;
-    cursor: pointer;
-  }
-  
-  .dulceria-imagen {
-    max-width: 12vw;
-    height: auto;
-    border: 0.3vh solid #ddd;
-    border-radius: 0.5vw;
-  }
-  
-  .dulceria-btn-eliminar {
-    border: none;
-    padding: 0.7vh 1.5vw;
-    font-size: 1.2vw;
-    border-radius: 0.5vw;
-    cursor: pointer;
-    color: #fff;
-    transition: transform 0.2s ease-in-out;
-    background-color: #e5004e;
-  }
-  
-  .dulceria-btn-eliminar:hover {
-    background-color: #c4003c;
-    transform: scale(1.05);
-  }
-  
-  @media (max-width: 768px) {
-    .dulceria-eliminar-title {
-      font-size: 4vw;
-    }
-  
-    .dulceria-eliminar-table th,
-    .dulceria-eliminar-table td {
       font-size: 2.5vw;
       padding: 1vh 2vw;
-    }
-  
-    .dulceria-imagen {
-      max-width: 18vw;
-    }
-  
-    .dulceria-btn-eliminar {
-      font-size: 2.5vw;
-    }
   }
-  
-  @media (max-width: 480px) {
-    .dulceria-eliminar-title {
+
+  .dulceria-imagen {
+      max-width: 18vw;
+  }
+
+  .dulceria-btn-eliminar {
+      font-size: 2.5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .dulceria-eliminar-title {
       font-size: 5vw;
-    }
-  
-    .dulceria-eliminar-table th,
-    .dulceria-eliminar-table td {
+  }
+
+  .dulceria-eliminar-table th,
+  .dulceria-eliminar-table td {
       font-size: 3vw;
       padding: 1vh 3vw;
-    }
-  
-    .dulceria-imagen {
-      max-width: 20vw;
-    }
-  
-    .dulceria-btn-eliminar {
-      font-size: 2.5vw;
-    }
   }
-  
+
+  .dulceria-imagen {
+      max-width: 20vw;
+  }
+
+  .dulceria-btn-eliminar {
+      font-size: 2.5vw;
+  }
+}

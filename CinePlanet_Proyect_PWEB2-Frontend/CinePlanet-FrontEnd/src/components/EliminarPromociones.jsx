@@ -5,7 +5,6 @@ import "../styles/EliminarPromociones.css";
 const EliminarPromociones = () => {
   const [promociones, setPromociones] = useState([]);
 
-  // Obtener promociones de la API
   const fetchPromociones = async () => {
     try {
       const response = await axios.get("http://localhost:8000/promociones/");
@@ -15,7 +14,6 @@ const EliminarPromociones = () => {
     }
   };
 
-  // Eliminar una promoción específica
   const handleDelete = async (id) => {
     if (!window.confirm("¿Estás seguro de eliminar esta promoción?")) return;
 
@@ -58,11 +56,10 @@ const EliminarPromociones = () => {
                     src={`http://localhost:8000${promocion.imagen}`}
                     alt={promocion.titulo}
                     className="promocion-imagen"
-                    width="100"
                   />
                 </td>
-                <td>{promocion.titulo}</td>
-                <td>{promocion.descripcion}</td>
+                <td className="text-wrap">{promocion.titulo}</td>
+                <td className="text-wrap">{promocion.descripcion}</td>
                 <td>
                   <button
                     className="promocion-btn-eliminar"

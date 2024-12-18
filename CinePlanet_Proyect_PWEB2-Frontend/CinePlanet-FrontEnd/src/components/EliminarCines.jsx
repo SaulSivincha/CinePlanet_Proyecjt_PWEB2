@@ -5,7 +5,6 @@ import "../styles/EliminarCines.css";
 const EliminarCines = () => {
   const [cines, setCines] = useState([]);
 
-  // Obtener cines de la API
   const fetchCines = async () => {
     try {
       const response = await axios.get("http://localhost:8000/cines/");
@@ -15,7 +14,6 @@ const EliminarCines = () => {
     }
   };
 
-  // Eliminar un cine específico
   const handleDelete = async (id) => {
     if (!window.confirm("¿Estás seguro de eliminar este cine?")) return;
 
@@ -57,12 +55,11 @@ const EliminarCines = () => {
                     src={`http://localhost:8000${cine.foto_sede}`}
                     alt={cine.nombre}
                     className="cine-imagen"
-                    width="100"
                   />
                 </td>
-                <td>{cine.nombre}</td>
-                <td>{cine.ubicacion}</td>
-                <td>{cine.tipos_funcion}</td>
+                <td className="text-wrap">{cine.nombre}</td>
+                <td className="text-wrap">{cine.ubicacion}</td>
+                <td className="text-wrap">{cine.tipos_funcion}</td>
                 <td>
                   <button
                     className="cine-btn-eliminar"
